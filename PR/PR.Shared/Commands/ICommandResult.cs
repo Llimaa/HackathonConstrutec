@@ -2,6 +2,6 @@
 {
     public interface ICommandResult
     {
-         object Mensagem { get; }
+         object Menssage { get; }
     }
 }
