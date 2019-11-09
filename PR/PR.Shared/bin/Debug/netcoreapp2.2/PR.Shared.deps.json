@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "PR.Domain/1.0.0": {
-        "dependencies": {
-          "PR.Shared": "1.0.0"
-        },
-        "runtime": {
-          "PR.Domain.dll": {}
-        }
-      },
       "PR.Shared/1.0.0": {
         "runtime": {
           "PR.Shared.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "PR.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "PR.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
