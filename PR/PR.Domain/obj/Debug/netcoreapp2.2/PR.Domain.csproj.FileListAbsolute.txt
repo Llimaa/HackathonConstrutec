@@ -1,4 +1,4 @@
-C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
-C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CoreCompileInputs.cache
-C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
-C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs

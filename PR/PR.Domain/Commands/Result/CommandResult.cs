@@ -4,12 +4,11 @@ namespace PR.Domain.Commands.Result
 {
     public class CommandResult : ICommandResult
     {
-        public CommandResult(object _object)
+        public CommandResult(string[] menssage)
         {
-            Object = _object;
+            Menssage = menssage;
         }
 
-        public object Object { get; set; }
-        public object Menssage => Object;
+        public string[] Menssage { get; set; }
     }
 }

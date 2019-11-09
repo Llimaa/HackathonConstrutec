@@ -1,11 +1,11 @@
 ﻿using PR.Domain.Commands.Inputs;
 using PR.Domain.Commands.Result;
 using PR.Domain.Entities;
+using PR.Domain.Helper;
 using PR.Domain.Repositories;
 using PR.Shared.Commands;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PR.Domain.Commands.Handlers
@@ -26,14 +26,17 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<ICommandResult> Handler(InsertReportsCommandInput command)
         {
-            var construction = await _OREP.GetId(command.ConstructionId);
-            var responsavel = await _RREP.GetId(command.ResponsibleId);
-            var report = new Report(command.Title, command.Image, command.Description, responsavel, construction);
+            var construction = _OREP.GetId(command.ConstructionId);
+            var responsavel = _RREP.GetId(command.ResponsibleId);
+            await Task.WhenAll(construction, responsavel);
+            var report = new Report(command.Title, command.Image, command.Description, responsavel.Result, construction.Result);
 
+            if (report.Invalid)
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
 
             _RLREP.Insert(report);
 
-            return new CommandResult("Report inserido com Sucesso !!");
+            return new CommandResult(new string[] { "Relatório inserido com Sucesso!" });
         }
 
         public async Task<ICommandResult> Handler(UpdateReportCommandInput command)
@@ -42,10 +45,12 @@ namespace PR.Domain.Commands.Handlers
 
             report.Update(command.Title, command.Image, command.Description);
 
+            if (report.Invalid)
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
+
             _RLREP.Update(report);
-
-
-            return new CommandResult("Report editado com Sucesso !!");
+            
+            return new CommandResult(new string[] { "Relatório editado com Sucesso !!" });
         }
 
         public async Task<IEnumerable<Report>> ListResponsible(Guid Id)

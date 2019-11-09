@@ -6,6 +6,7 @@ using PR.Domain.Repositories;
 using PR.Shared.Commands;
 using System;
 using System.Threading.Tasks;
+using PR.Domain.Helper;
 
 namespace PR.Domain.Commands.Handlers
 {
@@ -19,9 +20,12 @@ namespace PR.Domain.Commands.Handlers
             var address = new Address(command.Street, command.District, command.Number);
             var proprietario = new Owner(command.Name, command.Phone, command.Email, address);
 
+            if (proprietario.Invalid)
+                return new CommandResult(_BuildResult.BuildResult(proprietario.Notifications).Result);
+
             _PREP.Insert(proprietario);
 
-            return new CommandResult("Proprietário cadastrado com Sucesso!");
+            return new CommandResult(new string[] { "Proprietário cadastrado com Sucesso!" });
         }
         public async Task<ICommandResult> Handler(UpdateOwnerCommandInput command)
         {
@@ -29,9 +33,12 @@ namespace PR.Domain.Commands.Handlers
 
             proprietario.Update(command.Name, command.Phone, command.Email);
 
+            if (proprietario.Invalid)
+                return new CommandResult(_BuildResult.BuildResult(proprietario.Notifications).Result);
+
             _PREP.Update(proprietario);
 
-            return new CommandResult("Proprietário atualizado com Sucesso!");
+            return new CommandResult(new string[] { "Proprietário atualizado com Sucesso!"]);
         }
 
         public async Task<Owner> ListOwner(Guid Id)

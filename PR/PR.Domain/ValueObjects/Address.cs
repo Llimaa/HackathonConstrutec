@@ -1,6 +1,9 @@
-﻿namespace PR.Domain.ValueObjects
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+
+namespace PR.Domain.ValueObjects
 {
-    public class Address
+    public class Address : Notifiable
     {
         // Endereço
         public Address()
@@ -11,6 +14,12 @@
             Street = street;
             District = district;
             Number = number;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(street, "Street", "A Rua é campo obrigatório")
+                .IsNullOrEmpty(district, "District", "O Bairro é campo obrigatório")
+                .IsNullOrEmpty(number, "Number", "O Numero é campo obrigatório")
+                );
         }
         // Street
         public string Street { get; set; }
@@ -25,6 +34,12 @@
             Street = street;
             District = district;
             Number = number;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(street, "Street", "A Rua é campo obrigatório")
+                .IsNullOrEmpty(district, "District", "O Bairro é campo obrigatório")
+                .IsNullOrEmpty(number, "Number", "O Numero é campo obrigatório")
+                );
         }
     }
 }

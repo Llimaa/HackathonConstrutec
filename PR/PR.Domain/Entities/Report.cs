@@ -1,4 +1,5 @@
-﻿using PR.Shared.Entities;
+﻿using Flunt.Validations;
+using PR.Shared.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -19,6 +20,13 @@ namespace PR.Domain.Entities
             Responsible = responsible;
             Construction = construction;
             DateReport = DateTime.Now;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
+                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório"),
+
+                responsible, construction
+                );
         }
 
         public string Title { get; set; }
@@ -32,12 +40,19 @@ namespace PR.Domain.Entities
         public void AddComments(Comment comment)
         {
             Comments.Add(comment);
+
+            AddNotifications(comment);
         }
         public void Update(string title, string image, string description)
         {
             Title = title;
             Image = image;
             Description = description;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
+                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
+                );
         }
     }
 }
