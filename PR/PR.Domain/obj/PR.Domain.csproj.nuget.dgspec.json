@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Domain\\PR.Domain.csproj": {}
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Domain\\PR.Domain.csproj": {
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Domain\\PR.Domain.csproj",
+        "projectUniqueName": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
         "projectName": "PR.Domain",
-        "projectPath": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Domain\\PR.Domain.csproj",
+        "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
         "packagesPath": "C:\\Users\\casas bahia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Domain\\obj\\",
+        "outputPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\PR.Shared.csproj": {
-                "projectPath": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\PR.Shared.csproj"
+              "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
+                "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\PR.Shared.csproj": {
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\PR.Shared.csproj",
+        "projectUniqueName": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
         "projectName": "PR.Shared",
-        "projectPath": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\PR.Shared.csproj",
+        "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
         "packagesPath": "C:\\Users\\casas bahia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\casas bahia\\source\\repos\\PR\\PR.Shared\\obj\\",
+        "outputPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

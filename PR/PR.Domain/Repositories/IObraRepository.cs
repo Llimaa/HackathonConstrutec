@@ -10,7 +10,7 @@ namespace PR.Domain.Repositories
     {
         void Inserir(Obra obra);
         void Atualizar(Obra obra);
-        Task<Obra> BuscarPorId(Obra obra);
+        Task<Obra> BuscarPorId(Guid Id);
         Task<IEnumerable<Obra>> ListarPorProprietarioId(Guid proprietarioId);
     }
 }
