@@ -22,7 +22,7 @@ namespace PR.API.Controllers
         [HttpGet("{constructionId}")]
         public async Task<IEnumerable<Report>> Get(Guid constructionId)
         {
-            var report = await ReportHandler.ListConstruction(constructionId);
+            var report = await ReportHandler.ListByConstructionId(constructionId);
 
             return report;
         }

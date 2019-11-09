@@ -21,7 +21,7 @@ namespace PR.API.Controllers
         [HttpGet("{ownerId}")]
         public async Task<IEnumerable<Construction>> Get(Guid ownerId)
         {
-            var report = await ConstructionHandler.ListOwner(ownerId);
+            var report = await ConstructionHandler.ListByOwnerId(ownerId);
 
             return report;
         }
