@@ -9,8 +9,7 @@ namespace PR.Domain.Repositories
     {
         void Insert(Comment comment);
         void Update(Comment comment);
-        Task<Comment> GetId(Guid Id);
-        Task<IEnumerable<Comment>> ListCommentsPorReportId(Guid relatorioId);
-       // IEnumerable<Comentario> TodosOsComments();
+        Task<Comment> GetById(Guid Id);
+        Task<IEnumerable<Comment>> ListCommentsByReportId(Guid reportId);
     }
 }

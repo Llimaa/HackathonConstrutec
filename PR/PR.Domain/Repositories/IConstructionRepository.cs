@@ -9,7 +9,7 @@ namespace PR.Domain.Repositories
     {
         void Insert(Construction construction);
         void Update(Construction construction);
-        Task<Construction> GetId(Guid Id);
-        Task<IEnumerable<Construction>> ListOwnerId(Guid proprietarioId);
+        Task<Construction> GetById(Guid Id);
+        Task<IEnumerable<Construction>> ListByOwnerId(Guid owerId);
     }
 }

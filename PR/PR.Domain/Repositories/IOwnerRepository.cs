@@ -8,6 +8,6 @@ namespace PR.Domain.Repositories
     {
         void Insert(Owner proprietario);
         void Update(Owner proprietario);
-        Task<Owner> GetId(Guid Id);
+        Task<Owner> GetById(Guid Id);
     }
 }

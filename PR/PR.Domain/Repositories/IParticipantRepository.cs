@@ -8,8 +8,8 @@ namespace PR.Domain.Repositories
     public interface IParticipantRepository
     {
         void Insert(Guid responsavelId, Guid obraId);
-        Task<IEnumerable<Responsible>> GetConstructionId(Guid obraId); 
-        Task<IEnumerable<Construction>> GetResponsibleId(Guid responsavelId);
+        Task<IEnumerable<Responsible>> ListResponsibleByConstructionId(Guid constructionId); 
+        Task<IEnumerable<Construction>> ListConstructionByResponsibleId(Guid responsableId);
 
     }
 }
