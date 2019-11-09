@@ -14,35 +14,31 @@ using PR.Domain.Helper;
 namespace PR.Domain.Commands.Handlers
 {
     public class ConstructionHandler : ICommandHandler<InsertConstructionCommandInput>,
-                                ICommandHandler<UpdateConstructionCommandInput>,
-                                ICommandHandler<InsertCommentCommandInput>,
-                                ICommandHandler<UpdateCommentCommandInput>
+                                ICommandHandler<UpdateConstructionCommandInput>
+
 
     {
         private readonly IOwnerRepository _PPREP;
         private readonly IResponsibleRepository _RREP;
         private readonly IConstructionRepository _OREP;
         private readonly IParticipantRepository _PAREP;
-        private readonly IReportRepository _RELREP;
-        private readonly ICommentRepository _COREP;
 
-        public ConstructionHandler(IOwnerRepository PPREP, IResponsibleRepository RREP, IConstructionRepository OREP, IParticipantRepository PAREP,
-            IReportRepository RELREP, ICommentRepository COREP)
+
+        public ConstructionHandler(IOwnerRepository PPREP, IResponsibleRepository RREP,
+            IConstructionRepository OREP, IParticipantRepository PAREP)
         {
             _PPREP = PPREP;
             _RREP = RREP;
             _OREP = OREP;
             _PAREP = PAREP;
-            _RELREP = RELREP;
-            _COREP = COREP;
         }
 
         public async Task<ICommandResult> Handler(InsertConstructionCommandInput command)
         {
-            var proprietario = _PPREP.GetId(command.OwnerId);
-            var residente = _RREP.GetCREA(command.ResidentCrea);
-            var fiscal1 = _RREP.GetCREA(command.Fiscal1Crea);
-            var fiscal2 = _RREP.GetCREA(command.Fiscal2Crea);
+            var proprietario = _PPREP.GetById(command.OwnerId);
+            var residente = _RREP.GetByCREA(command.ResidentCrea);
+            var fiscal1 = _RREP.GetByCREA(command.Fiscal1Crea);
+            var fiscal2 = _RREP.GetByCREA(command.Fiscal2Crea);
             var address = new Address(command.Street, command.District, command.Number);
 
             await Task.WhenAll(proprietario, residente, fiscal1, fiscal2);
@@ -54,7 +50,7 @@ namespace PR.Domain.Commands.Handlers
 
             foreach (var item in command.creas)
             {
-                responsavel = await _RREP.GetCREA(item);
+                responsavel = await _RREP.GetByCREA(item);
 
                 construction.AddResponsible(responsavel);
             }
@@ -74,10 +70,10 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<ICommandResult> Handler(UpdateConstructionCommandInput command)
         {
-            var construction = _OREP.GetId(command.ConstructionId);
-            var residente = _RREP.GetCREA(command.ResidentCrea);
-            var fiscal1 = _RREP.GetCREA(command.Fiscal1Crea);
-            var fiscal2 = _RREP.GetCREA(command.Fiscal2Crea);
+            var construction = _OREP.GetById(command.ConstructionId);
+            var residente = _RREP.GetByCREA(command.ResidentCrea);
+            var fiscal1 = _RREP.GetByCREA(command.Fiscal1Crea);
+            var fiscal2 = _RREP.GetByCREA(command.Fiscal2Crea);
             await Task.WhenAll(construction, residente, fiscal1, fiscal2);
             construction.Result.OptionalInformation(command.Image, residente.Result, fiscal1.Result, fiscal2.Result);
             construction.Result.Update(command.Name, command.Image, command.FinalDate);
@@ -95,10 +91,10 @@ namespace PR.Domain.Commands.Handlers
         public async Task AddResponsaveis(string[] creas, Construction construction)
         {
             List<Responsible> responsaveis = new List<Responsible>();
-            var responsaveisBanco = await _PAREP.GetConstructionId(construction.Id);
+            var responsaveisBanco = await _PAREP.ListResponsibleByConstructionId(construction.Id);
             foreach (var item in creas)
             {
-                var responsavel = await _RREP.GetCREA(item);
+                var responsavel = await _RREP.GetByCREA(item);
                 responsaveis.Add(responsavel);
             }
 
@@ -111,39 +107,14 @@ namespace PR.Domain.Commands.Handlers
 
         }
 
-        public async Task<ICommandResult> Handler(InsertCommentCommandInput command)
+        public async Task<Construction> GetById(Guid Id)
         {
-
-            var report = _RELREP.GetId(command.ReportId);
-            var responsavel = _RREP.GetId(command.ResponsibleId);
-            await Task.WhenAll(report, responsavel);
-            var comment = new Comment(report.Result, responsavel.Result, command.Title, command.Description);
-
-            if (comment.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
-
-            _COREP.Insert(comment);
-
-            return new CommandResult(new string[] { "Comentário incluído com sucesso!" });
+            var construction = await _OREP.GetById(Id);
+            return construction;
         }
-
-        public async Task<ICommandResult> Handler(UpdateCommentCommandInput command)
+        public async Task<IEnumerable<Construction>> ListByOwnerId(Guid proprietarioId)
         {
-            var comment = await _COREP.GetId(command.CommentId);
-
-            if (comment.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
-
-            _COREP.Update(comment);
-
-            return new CommandResult(new string[] { "Comentário atualizado com sucesso!" });
-
-        }
-
-
-        public async Task<IEnumerable<Construction>> ListOwner(Guid proprietarioId)
-        {
-            var constructions = await _OREP.ListOwnerId(proprietarioId);
+            var constructions = await _OREP.ListByOwnerId(proprietarioId);
 
             return constructions;
         }

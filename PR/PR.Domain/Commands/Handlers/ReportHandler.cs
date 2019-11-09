@@ -26,8 +26,8 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<ICommandResult> Handler(InsertReportCommandInput command)
         {
-            var construction = _OREP.GetId(command.ConstructionId);
-            var responsavel = _RREP.GetId(command.ResponsibleId);
+            var construction = _OREP.GetById(command.ConstructionId);
+            var responsavel = _RREP.GetById(command.ResponsibleId);
             await Task.WhenAll(construction, responsavel);
             var report = new Report(command.Title, command.Image, command.Description, responsavel.Result, construction.Result);
 
@@ -41,7 +41,7 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<ICommandResult> Handler(UpdateReportCommandInput command)
         {
-            var report = await _RLREP.GetId(command.ReportId);
+            var report = await _RLREP.GetById(command.ReportId);
 
             report.Update(command.Title, command.Image, command.Description);
 
@@ -53,14 +53,21 @@ namespace PR.Domain.Commands.Handlers
             return new CommandResult(new string[] { "Relatório editado com Sucesso !!" });
         }
 
-        public async Task<IEnumerable<Report>> ListResponsible(Guid Id)
+        public async Task<Report> GetById(Guid id)
         {
-            return await _RLREP.ListResponsibleId(Id);
+            var report = await _RLREP.GetById(id);
+            return report;
+        }
+        public async Task<IEnumerable<Report>> ListByResponsibleId(Guid responsibleId)
+        {
+            var reports = await _RLREP.ListByResponsibleId(responsibleId);
+            return reports;
         }
 
-        public async Task<IEnumerable<Report>> ListConstruction(Guid Id)
+        public async Task<IEnumerable<Report>> ListByConstructionId(Guid constructionId)
         {
-            return await _RLREP.ListConstructionId(Id);
+            var reports = await _RLREP.ListByConstructionId(constructionId);
+            return reports;
         }
     }
 }
