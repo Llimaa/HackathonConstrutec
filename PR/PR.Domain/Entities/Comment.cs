@@ -1,4 +1,5 @@
-﻿using PR.Shared.Entities;
+﻿using Flunt.Validations;
+using PR.Shared.Entities;
 
 namespace PR.Domain.Entities
 {
@@ -14,6 +15,13 @@ namespace PR.Domain.Entities
             Responsible = responsible;
             Description = description;
             Title = title;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
+                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório"),
+
+                report, responsible
+                );
         }
 
         public Report Report { get; set; }
@@ -25,6 +33,11 @@ namespace PR.Domain.Entities
         {
             Title = title;
             Description = description;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
+                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
+                );
         }
     }
 }

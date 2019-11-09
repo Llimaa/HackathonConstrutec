@@ -17,6 +17,9 @@ namespace PR.Domain.Commands.Handlers
             var resul = _RREP.GetCREA(command.CREA);
             var responsavel = new Responsible(command.Name, command.CREA, command.Email, command.Phone);
 
+            if (responsavel.Invalid)
+                return new CommandResult(responsavel.Notifications);
+
             if (!resul.Result.CREA.Contains(responsavel.CREA))
                 _RREP.Insert(responsavel);
 
@@ -27,6 +30,8 @@ namespace PR.Domain.Commands.Handlers
         public Task<ICommandResult> Handler(UpdateResponsibleCommandInput command)
         {
             var responsavel = _RREP.GetId(command.Id);
+
+            throw new NotImplementedException();
         }
 
         public async Task<Responsible> ListId(Guid Id)

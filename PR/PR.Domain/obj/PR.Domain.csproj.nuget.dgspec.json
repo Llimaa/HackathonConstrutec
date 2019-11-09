@@ -47,6 +47,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -107,6 +111,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",

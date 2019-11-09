@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "Flunt/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -211,6 +220,9 @@
       "PR.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Flunt": "1.0.4"
+        },
         "compile": {
           "bin/placeholder/PR.Shared.dll": {}
         },
@@ -221,6 +233,18 @@
     }
   },
   "libraries": {
+    "Flunt/1.0.4": {
+      "sha512": "zsKA3Wol1+UeQBYtXuO56+ua6DBUpD5dcp3iAa86W5WcMLOWBMaDXKdqIrrLNgQUOW/U/svecb4ldgqwnC9XDQ==",
+      "type": "package",
+      "path": "flunt/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flunt.1.0.4.nupkg.sha512",
+        "flunt.nuspec",
+        "lib/netstandard2.0/Flunt.dll"
+      ]
+    },
     "Microsoft.NETCore.App/2.2.0": {
       "sha512": "7z5l8Jp324S8bU8+yyWeYHXUFYvKyiI5lqS1dXgTzOx1H69Qbf6df12kCKlNX45LpMfCMd4U3M6p7Rl5Zk7SLA==",
       "type": "package",
@@ -697,6 +721,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Flunt >= 1.0.4",
       "Microsoft.NETCore.App >= 2.2.0",
       "PR.Shared >= 1.0.0"
     ]
@@ -749,6 +774,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "Flunt": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",

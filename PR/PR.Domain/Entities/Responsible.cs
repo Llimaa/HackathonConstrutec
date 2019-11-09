@@ -1,4 +1,5 @@
-﻿using PR.Shared.Entities;
+﻿using Flunt.Validations;
+using PR.Shared.Entities;
 using System.Collections.Generic;
 
 namespace PR.Domain.Entities
@@ -9,12 +10,19 @@ namespace PR.Domain.Entities
         {
             Constructions = new List<Construction>();
         }
-        public Responsible(string name, string crea,string email, string phone)
+        public Responsible(string name, string crea, string email, string phone)
         {
             Name = name;
             CREA = crea;
             Email = email;
             Phone = phone;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
+                .IsNullOrEmpty(crea, "CREA", "O CREA é campo obrigatório")
+                .IsEmail(email, "Email", "Email invalido")
+                .IsNullOrEmpty(phone, "Phone", "A Telefone é campo obrigatório")
+                );
         }
 
         public List<Construction> Constructions { get; set; }
@@ -28,6 +36,12 @@ namespace PR.Domain.Entities
             Name = name;
             Email = email;
             Phone = phone;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
+                .IsEmail(email, "Email", "Email invalido")
+                .IsNullOrEmpty(phone, "Phone", "A Telefone é campo obrigatório")
+                );
         }
     }
 }

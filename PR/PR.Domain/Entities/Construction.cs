@@ -1,4 +1,5 @@
-﻿using PR.Domain.Enuns;
+﻿using Flunt.Validations;
+using PR.Domain.Enuns;
 using PR.Domain.ValueObjects;
 using PR.Shared.Entities;
 using System;
@@ -23,6 +24,12 @@ namespace PR.Domain.Entities
             Owner = owner;
             StartDate = startDate;
             FinalDate = finalDate;
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório"),
+
+                address, owner
+                );
         }
 
         public string Name { get; set; }
@@ -44,6 +51,8 @@ namespace PR.Domain.Entities
             Resident = resident;
             Fiscal1 = fiscal1;
             Fiscal2 = fiscal2;
+
+            AddNotifications(resident, fiscal1, fiscal2);
         }
         public void Update(string name, string image, DateTime finalDate)
         {
@@ -52,14 +61,22 @@ namespace PR.Domain.Entities
             FinalDate = finalDate;
             Responsibles = new List<Responsible>();
             Reports = new List<Report>();
+
+            AddNotifications(new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
+                );
         }
         public void AddReport(Report report)
         {
             Reports.Add(report);
+
+            AddNotifications(report);
         }
         public void AddResponsible(Responsible responsible)
         {
             Responsibles.Add(responsible);
+
+            AddNotifications(responsible);
         }
         public void UpdateStatus(EStatusConstruction eStatusConstruction)
         {

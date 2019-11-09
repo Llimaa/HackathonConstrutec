@@ -19,6 +19,9 @@ namespace PR.Domain.Commands.Handlers
             var address = new Address(command.Street, command.District, command.Number);
             var proprietario = new Owner(command.Name, command.Phone, command.Email, address);
 
+            if (proprietario.Invalid)
+                return new CommandResult(proprietario.Notifications);
+
             _PREP.Insert(proprietario);
 
             return new CommandResult("Proprietário cadastrado com Sucesso!");
@@ -28,6 +31,9 @@ namespace PR.Domain.Commands.Handlers
             var proprietario = await _PREP.GetId(command.OwnerId);
 
             proprietario.Update(command.Name, command.Phone, command.Email);
+
+            if (proprietario.Invalid)
+                return new CommandResult(proprietario.Notifications);
 
             _PREP.Update(proprietario);
 
