@@ -1,0 +1,9 @@
+C:\Users\casas bahia\source\repos\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.deps.json
+C:\Users\casas bahia\source\repos\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.dll
+C:\Users\casas bahia\source\repos\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.pdb
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CoreCompileInputs.cache
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.dll
+C:\Users\casas bahia\source\repos\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.pdb
