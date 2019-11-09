@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj": {}
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
+        "projectUniqueName": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
         "projectName": "PR.Domain",
-        "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
-        "packagesPath": "C:\\Users\\Abmael Araujo Silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\obj\\",
+        "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj",
+        "packagesPath": "C:\\Users\\casas bahia\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Abmael Araujo Silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\casas bahia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
-                "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj"
+              "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
+                "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj"
               }
             }
           }
@@ -63,34 +63,28 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj": {
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj",
+        "projectUniqueName": "C:\\dev\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj",
         "projectName": "PR.Infra",
-        "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj",
-        "packagesPath": "C:\\Users\\Abmael Araujo Silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Infra\\obj\\",
+        "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Infra\\PR.Infra.csproj",
+        "packagesPath": "C:\\Users\\casas bahia\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Abmael Araujo Silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\casas bahia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -104,11 +98,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
-                "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj"
+              "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
+                "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj"
               },
-              "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
-                "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj"
+              "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
+                "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj"
               }
             }
           }
@@ -134,34 +128,28 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
+    "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
+        "projectUniqueName": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
         "projectName": "PR.Shared",
-        "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
-        "packagesPath": "C:\\Users\\Abmael Araujo Silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\obj\\",
+        "projectPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
+        "packagesPath": "C:\\Users\\casas bahia\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\HackathonConstrutec\\PR\\PR.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Abmael Araujo Silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\casas bahia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -198,16 +186,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

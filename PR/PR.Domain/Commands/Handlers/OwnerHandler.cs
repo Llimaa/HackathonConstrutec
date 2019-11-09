@@ -15,13 +15,20 @@ namespace PR.Domain.Commands.Handlers
 
     {
         private readonly IOwnerRepository _PREP;
+
+        public OwnerHandler(IOwnerRepository PREP)
+        {
+            _PREP = PREP;
+        }
+
         public async Task<ICommandResult> Handler(InsertOwnerCommandInput command)
         {
             var address = new Address(command.Street, command.District, command.Number);
             var proprietario = new Owner(command.Name, command.Phone, command.Email, address);
 
+            var result = await _BuildResult.BuildResult(proprietario.Notifications);
             if (proprietario.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(proprietario.Notifications).Result);
+                return new CommandResult(result);
 
             _PREP.Insert(proprietario);
 
@@ -29,7 +36,7 @@ namespace PR.Domain.Commands.Handlers
         }
         public async Task<ICommandResult> Handler(UpdateOwnerCommandInput command)
         {
-            var proprietario = await _PREP.GetId(command.OwnerId);
+            var proprietario = await _PREP.GetById(command.OwnerId);
 
             proprietario.Update(command.Name, command.Phone, command.Email);
 
@@ -43,7 +50,7 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<Owner> ListOwner(Guid Id)
         {
-            return await _PREP.GetId(Id);
+            return await _PREP.GetById(Id);
         }
     }
 }

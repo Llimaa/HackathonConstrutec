@@ -19,7 +19,7 @@ namespace PR.Domain.Commands.Handlers
         }
         public async Task<ICommandResult> Handler(InsertResponsibleCommandInput command)
         {
-            var resul = _RREP.GetCREA(command.CREA);
+            var resul = _RREP.GetByCREA(command.CREA);
             var responsavel = new Responsible(command.Name, command.CREA, command.Email, command.Phone);
 
             if (responsavel.Invalid)
@@ -34,7 +34,7 @@ namespace PR.Domain.Commands.Handlers
         }
         public async Task<ICommandResult> Handler(UpdateResponsibleCommandInput command)
         {
-            var responsavel = await _RREP.GetId(command.Id);
+            var responsavel = await _RREP.GetById(command.Id);
             responsavel.Update(command.Name, command.Email, command.Phone);
 
             _RREP.Update(responsavel);
@@ -44,12 +44,14 @@ namespace PR.Domain.Commands.Handlers
 
         public async Task<Responsible> ListId(Guid Id)
         {
-            return await _RREP.GetId(Id);
+            var responsible = await _RREP.GetById(Id);
+            return responsible;
         }
 
         public async Task<Responsible> ListCREA(string crea)
         {
-            return await _RREP.GetCREA(crea);
+            var responsible = await _RREP.GetByCREA(crea);
+            return responsible;
         }
     }
 }
