@@ -1,6 +1,7 @@
 ﻿using PR.Domain.Commands.Inputs;
 using PR.Domain.Commands.Result;
 using PR.Domain.Entities;
+using PR.Domain.Helper;
 using PR.Domain.Repositories;
 using PR.Shared.Commands;
 using System;
@@ -31,11 +32,11 @@ namespace PR.Domain.Commands.Handlers
             var report = new Report(command.Title, command.Image, command.Description, responsavel.Result, construction.Result);
 
             if (report.Invalid)
-                return new CommandResult(report.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
 
             _RLREP.Insert(report);
 
-            return new CommandResult("Relatório inserido com Sucesso!");
+            return new CommandResult(new string[] { "Relatório inserido com Sucesso!" });
         }
 
         public async Task<ICommandResult> Handler(UpdateReportCommandInput command)
@@ -45,11 +46,11 @@ namespace PR.Domain.Commands.Handlers
             report.Update(command.Title, command.Image, command.Description);
 
             if (report.Invalid)
-                return new CommandResult(report.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
 
             _RLREP.Update(report);
             
-            return new CommandResult("Relatório editado com Sucesso !!");
+            return new CommandResult(new string[] { "Relatório editado com Sucesso !!" });
         }
 
         public async Task<IEnumerable<Report>> ListResponsible(Guid Id)

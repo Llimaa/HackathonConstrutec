@@ -2,6 +2,6 @@
 {
     public interface ICommandResult
     {
-         object Menssage { get; }
+        string[] Menssage { get; }
     }
 }

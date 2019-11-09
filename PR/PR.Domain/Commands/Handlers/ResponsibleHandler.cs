@@ -1,6 +1,7 @@
 ﻿using PR.Domain.Commands.Inputs;
 using PR.Domain.Commands.Result;
 using PR.Domain.Entities;
+using PR.Domain.Helper;
 using PR.Domain.Repositories;
 using PR.Shared.Commands;
 using System;
@@ -18,12 +19,12 @@ namespace PR.Domain.Commands.Handlers
             var responsavel = new Responsible(command.Name, command.CREA, command.Email, command.Phone);
 
             if (responsavel.Invalid)
-                return new CommandResult(responsavel.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(responsavel.Notifications).Result);
 
             if (!resul.Result.CREA.Contains(responsavel.CREA))
                 _RREP.Insert(responsavel);
 
-            return new CommandResult("Responsible cadastrado com sucesso!");
+            return new CommandResult(new string[] { "O Responsavel cadastrado com sucesso!" });
 
 
         }

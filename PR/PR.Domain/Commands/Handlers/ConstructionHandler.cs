@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Flunt.Notifications;
+using PR.Domain.Helper;
 
 namespace PR.Domain.Commands.Handlers
 {
@@ -56,15 +58,18 @@ namespace PR.Domain.Commands.Handlers
 
                 construction.AddResponsible(responsavel);
             }
+
+            if (construction.Invalid)
+            {
+                return new CommandResult(_BuildResult.BuildResult(construction.Notifications).Result);
+            }
+
             foreach (var item in construction.Responsibles)
                 _PAREP.Insert(item.Id, construction.Id);
 
-            if(construction.Invalid)
-                return new CommandResult(construction.Notifications);
-
             _OREP.Insert(construction);
 
-            return new CommandResult("Projeto de Construction Cadastrada com Sucesso !");
+            return new CommandResult(new string[] { "Projeto de Construction Cadastrada com Sucesso !" });
         }
 
         public async Task<ICommandResult> Handler(UpdateConstructionCommandInput command)
@@ -78,13 +83,13 @@ namespace PR.Domain.Commands.Handlers
             construction.Result.Update(command.Name, command.Image, command.FinalDate);
 
             if (construction.Result.Invalid)
-                return new CommandResult(construction.Result.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(construction.Result.Notifications).Result);
 
             await AddResponsaveis(command.creas, construction.Result);
 
             _OREP.Update(construction.Result);
 
-            return new CommandResult("Projeto de Construction Editado com Sucesso !");
+            return new CommandResult(new string[] { "Projeto de Construction Editado com Sucesso !" });
         }
 
         public async Task AddResponsaveis(string[] creas, Construction construction)
@@ -115,11 +120,11 @@ namespace PR.Domain.Commands.Handlers
             var comment = new Comment(report.Result, responsavel.Result, command.Title, command.Description);
 
             if (comment.Invalid)
-                return new CommandResult(comment.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
 
             _COREP.Insert(comment);
 
-            return new CommandResult("Comentário incluído com sucesso!");
+            return new CommandResult(new string[] { "Comentário incluído com sucesso!" });
         }
 
         public async Task<ICommandResult> Handler(UpdateCommentCommandInput command)
@@ -127,11 +132,11 @@ namespace PR.Domain.Commands.Handlers
             var comment = await _COREP.GetId(command.CommentId);
 
             if (comment.Invalid)
-                return new CommandResult(comment.Notifications);
+                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
 
             _COREP.Update(comment);
 
-            return new CommandResult("Comentário atualizado com sucesso!");
+            return new CommandResult(new string[] { "Comentário atualizado com sucesso!" });
 
         }
 
@@ -142,6 +147,5 @@ namespace PR.Domain.Commands.Handlers
 
             return constructions;
         }
-
     }
 }
