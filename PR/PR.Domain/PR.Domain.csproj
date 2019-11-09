@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Flunt" Version="1.0.4" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

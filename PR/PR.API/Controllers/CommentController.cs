@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PR.Domain.Commands.Handlers;
 using PR.Domain.Commands.Inputs;
+using PR.Shared.Commands;
+using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
@@ -15,16 +17,18 @@ namespace PR.API.Controllers
 
         }
         [HttpPost]
-        public void Post([FromBody] InsertCommentCommandInput value)
+        public async Task<ICommandResult> Post([FromBody] InsertCommentCommandInput value)
         {
-            ConstructionHandler.Handler(value);
+            var result  = await ConstructionHandler.Handler(value);
+            return result;
         }
 
         // PUT: api/CommentAPI/5
         [HttpPut("{id}")]
-        public void Put([FromBody] UpdateCommentCommandInput value)
+        public async Task<ICommandResult> Put([FromBody] UpdateCommentCommandInput value)
         {
-            ConstructionHandler.Handler(value);
+            var result = await ConstructionHandler.Handler(value);
+            return result;
         }
     }
 }

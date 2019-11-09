@@ -39,7 +39,7 @@ namespace PR.Domain.Commands.Handlers
 
             _RREP.Update(responsavel);
 
-            return new CommandResult("Responsável atualizado com sucesso !");
+            return new CommandResult(new string[] { "Responsável atualizado com sucesso !" });
         }
 
         public async Task<Responsible> ListId(Guid Id)
