@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.deps.json
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.dll
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.pdb
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfoInputs.cache
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfo.cs
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.dll
-C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.pdb
-=======
 C:\dev\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.deps.json
 C:\dev\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.dll
 C:\dev\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.pdb
@@ -16,4 +7,3 @@ C:\dev\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.Assemb
 C:\dev\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfo.cs
 C:\dev\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.dll
 C:\dev\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.pdb
->>>>>>> 75c0d26ad7b1f3b399975496abadb60687136e7a
