@@ -16,3 +16,6 @@ C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\bin\Debu
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Shared.pdb
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.RazorTargetAssemblyInfo.cache
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.csproj.CopyComplete
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.pdb
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.pdb

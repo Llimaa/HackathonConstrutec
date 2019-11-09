@@ -18,7 +18,7 @@ namespace PR.API.Controllers
             OwnerHandler = constructionHandler;
 
         }
-        // GET: api/OwnerAPI
+        // GET: api/Owner/Id
         [HttpGet("{Id}")]
         public async Task<Owner> Get(Guid Id)
         {
@@ -26,7 +26,7 @@ namespace PR.API.Controllers
             return ListOwner;
         }
 
-        // POST: api/OwnerAPI
+        // POST: api/Owner/InsertOwnerCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertOwnerCommandInput value)
         {
@@ -34,7 +34,7 @@ namespace PR.API.Controllers
             return result;
         }
 
-        // PUT: api/OwnerAPI/5
+        // PUT: api/Owner/UpdateOwnerCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateOwnerCommandInput value)
         {

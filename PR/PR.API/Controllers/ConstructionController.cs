@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PR.Domain.Commands.Handlers;
 using PR.Domain.Commands.Inputs;
-using PR.Domain.Entities;
 using PR.Shared.Commands;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PR.API.Controllers
@@ -20,7 +17,7 @@ namespace PR.API.Controllers
 
         }
 
-        // POST: api/ConstructionAPI
+        // POST: api/Construction/InsertConstructionCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertConstructionCommandInput value)
         {
@@ -28,7 +25,7 @@ namespace PR.API.Controllers
             return result;
         }
 
-        // PUT: api/ConstructionAPI/5
+        // PUT: api/Construction/UpdateConstructionCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateConstructionCommandInput value)
         {

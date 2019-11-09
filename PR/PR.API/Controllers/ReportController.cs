@@ -17,7 +17,7 @@ namespace PR.API.Controllers
 
         }
 
-        // POST: api/ReportAPI
+        // POST: api/Report/InsertReportCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertReportCommandInput value)
         {
@@ -25,7 +25,7 @@ namespace PR.API.Controllers
             return result;
         }
 
-        // PUT: api/ReportAPI/5
+        // PUT: api/Report/UpdateReportCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateReportCommandInput value)
         {

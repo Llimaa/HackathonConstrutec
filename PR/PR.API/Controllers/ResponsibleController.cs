@@ -19,7 +19,7 @@ namespace PR.API.Controllers
 
         }
 
-        // GET: api/ResponsibleAPI
+        // GET: api/Responsible/Id
         [HttpGet("{Id}")]
         public async Task<Responsible> Get(Guid Id)
         {
@@ -27,15 +27,15 @@ namespace PR.API.Controllers
             return ListResponsible;
         }
 
-        // GET: api/ResponsibleAPI
-        [HttpGet("{Id}")]
+        // GET: api/Responsible/crea
+        [HttpGet("{crea}")]
         public async Task<Responsible> Get(string crea)
         {
             var ListResponsible = await ResponsibleHandler.ListCREA(crea);
             return ListResponsible;
         }
 
-        // POST: api/ResponsibleAPI
+        // POST: api/Responsible/InsertResponsibleCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertResponsibleCommandInput value)
         {
@@ -43,7 +43,7 @@ namespace PR.API.Controllers
             return result;
         }
 
-        // PUT: api/ResponsibleAPI/5
+        // PUT: api/Responsible/UpdateResponsibleCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateResponsibleCommandInput value)
         {

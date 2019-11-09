@@ -12,17 +12,17 @@ namespace PR.API.Controllers
     [ApiController]
     public class ReportByConstructionController : ControllerBase
     {
-        private readonly ReportHandler _handler;
+        private readonly ReportHandler ReportHandler;
 
-        public ReportByConstructionController(ReportHandler handler)
+        public ReportByConstructionController(ReportHandler reportHandler)
         {
-            _handler = handler;
+            ReportHandler = reportHandler;
         }
-
+        // GET: api/ReportByConstruction/constructionId
         [HttpGet("{constructionId}")]
         public async Task<IEnumerable<Report>> Get(Guid constructionId)
         {
-            var report = await _handler.ListConstruction(constructionId);
+            var report = await ReportHandler.ListConstruction(constructionId);
 
             return report;
         }

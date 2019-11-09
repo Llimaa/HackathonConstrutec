@@ -16,6 +16,7 @@ namespace PR.API.Controllers
             ConstructionHandler = constructionHandler;
 
         }
+        // POST: api/Comment/InsertCommentCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertCommentCommandInput value)
         {
@@ -23,7 +24,7 @@ namespace PR.API.Controllers
             return result;
         }
 
-        // PUT: api/CommentAPI/5
+        // PUT: api/Comment/UpdateCommentCommandInput
         [HttpPut("{id}")]
         public async Task<ICommandResult> Put([FromBody] UpdateCommentCommandInput value)
         {
