@@ -14,20 +14,26 @@ namespace PR.Domain.Commands.Handlers
 {
     public class ObraHandler : ICommandHandler<InsertObraCommandInput>,
                                 ICommandHandler<UpdateObraCommandInput>,
-                                ICommandHandler<InsertProprietarioCommandInput>,
-                                ICommandHandler<UpdateProprietarioCommandInput>
+                                ICommandHandler<InsertComentarioCommandInput>,
+                                ICommandHandler<UpdateComentarioCommandInput>
+
     {
         private readonly IProprietarioRepository _PPREP;
         private readonly IResponsavelRepository _RREP;
         private readonly IObraRepository _OREP;
         private readonly IParticipanteRepository _PAREP;
+        private readonly IRelatorioRepository _RELREP;
+        private readonly IComentarioRepository _COREP;
 
-        public ObraHandler(IProprietarioRepository PPREP, IResponsavelRepository RREP, IObraRepository OREP, IParticipanteRepository PAREP)
+        public ObraHandler(IProprietarioRepository PPREP, IResponsavelRepository RREP, IObraRepository OREP, IParticipanteRepository PAREP,
+            IRelatorioRepository RELREP, IComentarioRepository COREP)
         {
             _PPREP = PPREP;
             _RREP = RREP;
             _OREP = OREP;
             _PAREP = PAREP;
+            _RELREP = RELREP;
+            _COREP = COREP;
         }
 
         public async Task<ICommandResult> Handler(InsertObraCommandInput command)
@@ -93,25 +99,35 @@ namespace PR.Domain.Commands.Handlers
 
         }
 
-        public async Task<ICommandResult> Handler(InsertProprietarioCommandInput command)
+        public async Task<ICommandResult> Handler(InsertComentarioCommandInput command)
         {
-            var endereco = new Endereco(command.Rua, command.Bairro, command.Numero);
-            var proprietario = new Proprietario(command.Nome, command.Telefone, command.Email, endereco);
 
-            _PPREP.Inserir(proprietario);
+            var relatorio = await _RELREP.BuscarPorId(command.RelatorioId);
+            var responsavel = await _RREP.BuscarPorId(command.ResponsavelId);
+            var comentario = new Comentario(relatorio, responsavel, command.Titulo, command.Descricao);
 
-           return new CommandResult("Proprietário cadastrado com Sucesso!");
+            _COREP.Inserir(comentario);
+
+            return new CommandResult("Comentário incluído com sucesso!");
         }
 
-        public async Task<ICommandResult> Handler(UpdateProprietarioCommandInput command)
+        public async Task<ICommandResult> Handler(UpdateComentarioCommandInput command)
         {
-            var proprietario = await _PPREP.BuscarPorId(command.ProprietarioId);
+            var comentario = await _COREP.BuscarPorId(command.ComentarioId);
 
-            proprietario.Update(command.Nome, command.Telefone, command.Email);
+            _COREP.Atualizar(comentario);
 
-            _PPREP.Atualizar(proprietario);
+            return new CommandResult("Comentário atualizado com sucesso!");
 
-            return new CommandResult("Proprietário atualizado com Sucesso!");
         }
+
+
+        public async Task<IEnumerable<Obra>> ListarPorProprietario(Guid proprietarioId)
+        {
+            var obras = await _OREP.ListarPorProprietarioId(proprietarioId);
+
+            return obras;
+        }
+
     }
 }

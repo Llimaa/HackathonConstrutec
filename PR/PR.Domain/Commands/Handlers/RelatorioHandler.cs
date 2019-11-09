@@ -47,5 +47,15 @@ namespace PR.Domain.Commands.Handlers
 
             return new CommandResult("Relatorio editado com Sucesso !!");
         }
+
+        public async Task<IEnumerable<Relatorio>> ListarPorResponsavel(Guid Id)
+        {
+            return await _RLREP.ListarPorResponsavelId(Id);
+        }
+
+        public async Task<IEnumerable<Relatorio>> ListarPorObra(Guid Id)
+        {
+            return await _RLREP.ListarPorObraId(Id);
+        }
     }
 }

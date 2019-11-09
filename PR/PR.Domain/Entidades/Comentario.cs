@@ -1,6 +1,8 @@
-﻿namespace PR.Domain.Entidades
+﻿using PR.Shared.Entidades;
+
+namespace PR.Domain.Entidades
 {
-    public class Comentario
+    public class Comentario:Entidade
     {
         public Comentario()
         {

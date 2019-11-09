@@ -10,5 +10,7 @@ namespace PR.Domain.Repositories
     {
         void Inserir(Guid responsavelId, Guid obraId);
         Task<IEnumerable<Responsavel>> BuscarPorObraId(Guid obraId); 
+        Task<IEnumerable<Obra>> BuscarPorResponsavelId(Guid responsavelId);
+
     }
 }
