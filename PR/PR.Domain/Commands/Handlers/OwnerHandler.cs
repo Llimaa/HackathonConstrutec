@@ -38,7 +38,7 @@ namespace PR.Domain.Commands.Handlers
 
             _PREP.Update(proprietario);
 
-            return new CommandResult(new string[] { "Proprietário atualizado com Sucesso!"]);
+            return new CommandResult(new string[] { "Proprietário atualizado com Sucesso!" });
         }
 
         public async Task<Owner> ListOwner(Guid Id)

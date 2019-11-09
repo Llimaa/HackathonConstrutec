@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PR.Domain.Commands.Handlers
 {
-    public class ReportHandler : ICommandHandler<InsertReportsCommandInput>,
+    public class ReportHandler : ICommandHandler<InsertReportCommandInput>,
                                     ICommandHandler<UpdateReportCommandInput>
     {
         private readonly IResponsibleRepository _RREP;
@@ -24,7 +24,7 @@ namespace PR.Domain.Commands.Handlers
             _RLREP = RLREP;
         }
 
-        public async Task<ICommandResult> Handler(InsertReportsCommandInput command)
+        public async Task<ICommandResult> Handler(InsertReportCommandInput command)
         {
             var construction = _OREP.GetId(command.ConstructionId);
             var responsavel = _RREP.GetId(command.ResponsibleId);

@@ -23,14 +23,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp2.2": {
             "projectReferences": {
               "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj": {
                 "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Domain\\PR.Domain.csproj"
@@ -48,21 +48,34 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp2.2": {
           "dependencies": {
-            "Microsoft.AspNetCore.ResponseCompression": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.Extensions.Logging.Debug": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[4.0.1, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUi": {
               "target": "Package",
               "version": "[4.0.1, )"
             }
@@ -77,14 +90,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
@@ -141,6 +146,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "System.Threading.Tasks": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

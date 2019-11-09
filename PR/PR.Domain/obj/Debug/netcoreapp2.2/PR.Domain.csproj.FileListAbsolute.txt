@@ -1,4 +1,11 @@
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.deps.json
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.pdb
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Shared.pdb
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CopyComplete
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.pdb
