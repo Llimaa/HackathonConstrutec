@@ -1,0 +1,4 @@
+C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
+C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CoreCompileInputs.cache
+C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
+C:\dev\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs
