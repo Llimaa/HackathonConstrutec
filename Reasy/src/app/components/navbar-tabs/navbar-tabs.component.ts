@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,12 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar-tabs.component.scss'],
 })
 
-export class NavbarTabsComponent {
+export class NavbarTabsComponent implements OnInit {
 
   @Input() title?: string;
   @Input() backTo?: string;
 
+  public path: string;
   public valor: boolean;
+  public isDetail: boolean;
   public closeSearch: boolean;
 
   constructor
@@ -22,8 +24,16 @@ export class NavbarTabsComponent {
       protected router: Router,
       public menuCtrl: MenuController
     ) {
-
+    this.isDetail = false;
     this.closeSearch = true;
+  }
+
+  ngOnInit() {
+    console.log('this.backTo.length: ', this.backTo.length);
+    if (this.backTo.length > 1) {
+      this.isDetail = true;
+      this.path = this.backTo;
+    }
   }
 
   async openMenu() {

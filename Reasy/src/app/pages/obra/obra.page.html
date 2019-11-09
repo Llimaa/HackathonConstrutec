@@ -1,4 +1,4 @@
-<component-navbar-tabs [title]="'Minhas obras'" [backTo]="'path'">
+<component-navbar-tabs [title]="'Minhas obras'" [backTo]="'0'">
 </component-navbar-tabs>
 
 <ion-content>
@@ -15,7 +15,7 @@
     <ion-grid class="grid">
       <ion-row class="ion-no-padding">
 
-        <ion-col class="col" size="4">
+        <ion-col class="col" size="4" (click)="detalharObra()">
           <ion-card class="ion-no-padding">
             <div class="container-img">
               <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">

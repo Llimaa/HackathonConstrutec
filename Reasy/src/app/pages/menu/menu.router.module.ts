@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'obra',
         loadChildren: '../obra/obra.module#ObraPageModule'
       },
+      {
+        path: 'detalhes-obra/:id',
+        loadChildren: '../detalhes-obra/detalhes-obra.module#DetalhesObraPageModule'
+      },
     ]
   }
 ];

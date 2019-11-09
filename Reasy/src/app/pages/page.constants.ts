@@ -1,5 +1,6 @@
 
 export const OBRA_URL = '/menu/tabs/obra';
+export const DETALHAR_OBRA = '/menu/detalhes-obra';
 
 export const PAGES = [
   {
