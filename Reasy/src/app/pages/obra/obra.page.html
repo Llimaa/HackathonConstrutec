@@ -1,8 +1,129 @@
-<component-navbar-tabs
-  [title]="'title'"
-  [backTo]="'path'">
+<component-navbar-tabs [title]="'Minhas obras'" [backTo]="'0'">
 </component-navbar-tabs>
 
 <ion-content>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" size="small" (click)="getPhoto2()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <img *ngIf="foto.data" [src]="foto.data" alt="Select Image" />
+
+  <ion-list>
+    <ion-grid class="grid">
+      <ion-row class="ion-no-padding">
+
+        <ion-col class="col" size="4" (click)="detalharObra()">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="col" size="4">
+          <ion-card class="ion-no-padding">
+            <div class="container-img">
+              <img src="https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg" alt="">
+            </div>
+            <ion-card-content>
+              <h2>Nome</h2>
+              <h3>Descrição</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 </ion-content>

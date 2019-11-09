@@ -13,6 +13,10 @@ namespace PR.Domain.Commands.Handlers
                                     ICommandHandler<UpdateResponsibleCommandInput>
     {
         private readonly IResponsibleRepository _RREP;
+        public ResponsibleHandler(IResponsibleRepository RREP)
+        {
+            _RREP = RREP;          
+        }
         public async Task<ICommandResult> Handler(InsertResponsibleCommandInput command)
         {
             var resul = _RREP.GetCREA(command.CREA);
@@ -28,11 +32,14 @@ namespace PR.Domain.Commands.Handlers
 
 
         }
-        public Task<ICommandResult> Handler(UpdateResponsibleCommandInput command)
+        public async Task<ICommandResult> Handler(UpdateResponsibleCommandInput command)
         {
-            var responsavel = _RREP.GetId(command.Id);
+            var responsavel = await _RREP.GetId(command.Id);
+            responsavel.Update(command.Name, command.Email, command.Phone);
 
-            throw new NotImplementedException();
+            _RREP.Update(responsavel);
+
+            return new CommandResult("Responsável atualizado com sucesso !");
         }
 
         public async Task<Responsible> ListId(Guid Id)
