@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PR.Domain.Commands.Handlers;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PR.API
@@ -25,6 +26,11 @@ namespace PR.API
             {
                 x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
             });
+
+            services.AddTransient<ConstructionHandler, ConstructionHandler>();
+            services.AddTransient<OwnerHandler, OwnerHandler>();
+            services.AddTransient<ReportHandler, ReportHandler>();
+            services.AddTransient<ResponsibleHandler, ResponsibleHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,18 +46,23 @@ namespace PR.API
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseMvc(route =>
             {
                 route.MapRoute("default", "{controller=swagger}/{action=Index}/{id?}");
             });
             app.UseResponseCompression();
-            app.UseSwagger();
+            app.UseSwagger(c => {
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
+            });
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "PR API - v1");
+                c.RoutePrefix = "swagger";
             });
             // Pagina com documentação: '/swagger/index.html'
+
+            app.UseHttpsRedirection();
+
         }
     }
 }

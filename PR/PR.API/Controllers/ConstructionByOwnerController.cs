@@ -3,7 +3,6 @@ using PR.Domain.Commands.Handlers;
 using PR.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PR.API.Controllers
@@ -18,7 +17,7 @@ namespace PR.API.Controllers
         {
             ConstructionHandler = constructionHandler;
         }
-
+        // GET: api/ConstructionByOwner/ownerId
         [HttpGet("{ownerId}")]
         public async Task<IEnumerable<Construction>> Get(Guid ownerId)
         {
