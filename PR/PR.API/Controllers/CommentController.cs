@@ -10,17 +10,17 @@ namespace PR.API.Controllers
     [ApiController]
     public class CommentController : ControllerBase
     {
-        ConstructionHandler ConstructionHandler;
-        public CommentController( ConstructionHandler constructionHandler)
+        CommentHandler CommentHandler;
+        public CommentController(CommentHandler commentHandler)
         {
-            ConstructionHandler = constructionHandler;
+            CommentHandler = commentHandler;
 
         }
         // POST: api/Comment/InsertCommentCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertCommentCommandInput value)
         {
-            var result  = await ConstructionHandler.Handler(value);
+            var result  = await CommentHandler.Handler(value);
             return result;
         }
 
@@ -28,7 +28,7 @@ namespace PR.API.Controllers
         [HttpPut("{id}")]
         public async Task<ICommandResult> Put([FromBody] UpdateCommentCommandInput value)
         {
-            var result = await ConstructionHandler.Handler(value);
+            var result = await CommentHandler.Handler(value);
             return result;
         }
     }

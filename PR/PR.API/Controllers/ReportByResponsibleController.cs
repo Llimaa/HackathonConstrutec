@@ -21,7 +21,7 @@ namespace PR.API.Controllers
         [HttpGet("{responsibleId}")]
         public async Task<IEnumerable<Report>> Get(Guid responsibleId)
         {
-            var report = await _handler.ListResponsible(responsibleId);
+            var report = await _handler.ListByResponsibleId(responsibleId);
 
             return report;
         }
