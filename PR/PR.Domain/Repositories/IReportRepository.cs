@@ -9,8 +9,8 @@ namespace PR.Domain.Repositories
     {
         void Insert(Report relatorio);
         void Update(Report relatorio);
-        Task<Report> GetId(Guid id);
-        Task<IEnumerable<Report>> ListResponsibleId(Guid responsavelId);
-        Task<IEnumerable<Report>> ListConstructionId(Guid obraId);
+        Task<Report> GetById(Guid id);
+        Task<IEnumerable<Report>> ListByResponsibleId(Guid responsabileId);
+        Task<IEnumerable<Report>> ListByConstructionId(Guid constructionId);
     }
 }

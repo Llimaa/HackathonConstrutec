@@ -8,7 +8,7 @@ namespace PR.Domain.Repositories
     {
         void Insert(Responsible responsavel);
         void Update(Responsible responsavel);
-        Task<Responsible> GetCREA(string crea);
-        Task<Responsible> GetId(Guid Id);
+        Task<Responsible> GetByCREA(string crea);
+        Task<Responsible> GetById(Guid Id);
     }
 }

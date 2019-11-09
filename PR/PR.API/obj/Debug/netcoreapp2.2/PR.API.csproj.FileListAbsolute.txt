@@ -16,3 +16,22 @@ C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\bin\Debu
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Shared.pdb
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.RazorTargetAssemblyInfo.cache
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.csproj.CopyComplete
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.deps.json
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.runtimeconfig.json
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.runtimeconfig.dev.json
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.dll
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.API.pdb
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Domain.dll
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Domain.pdb
+C:\dev\HackathonConstrutec\PR\PR.API\bin\Debug\netcoreapp2.2\PR.Shared.pdb
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.csprojAssemblyReference.cache
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.csproj.CoreCompileInputs.cache
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.RazorAssemblyInfo.cache
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.RazorAssemblyInfo.cs
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.AssemblyInfoInputs.cache
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.AssemblyInfo.cs
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.RazorTargetAssemblyInfo.cache
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.csproj.CopyComplete
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.dll
+C:\dev\HackathonConstrutec\PR\PR.API\obj\Debug\netcoreapp2.2\PR.API.pdb
