@@ -3,7 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PR.API.Context;
 using PR.Domain.Commands.Handlers;
+using PR.Domain.Repositories;
+using PR.Infra.Infra;
+using PR.Infra.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PR.API
@@ -26,11 +30,22 @@ namespace PR.API
             {
                 x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
             });
-
+            // DataBase Context
+            services.AddScoped<IDB, MSSQLDB>();
+            services.AddTransient<IDBConfiguration, MSSQLDBConfiguration>();
+            // Handlers
             services.AddTransient<ConstructionHandler, ConstructionHandler>();
             services.AddTransient<OwnerHandler, OwnerHandler>();
             services.AddTransient<ReportHandler, ReportHandler>();
             services.AddTransient<ResponsibleHandler, ResponsibleHandler>();
+            // Repositories
+            services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddTransient<IConstructionRepository, ConstructionRepository>();
+            services.AddTransient<IOwnerRepository, OwnerRepository>();
+            services.AddTransient<IParticipantRepository, ParticipantRepository>();
+            services.AddTransient<IReportRepository, ReportRepository>();
+            services.AddTransient<IResponsibleRepository, ResponsibleRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
