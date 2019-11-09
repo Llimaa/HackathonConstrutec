@@ -1,15 +1,15 @@
+import { Owner } from './../../models/owner';
+import { Address } from './../../models/address';
+import { EStatusConstruction } from './../../enum/EStatusConstruction';
 import { Foto } from './../../models/foto';
 import { Component, OnInit } from '@angular/core';
 import { UploadPhotoService } from 'src/app/services/upload-photo-service/upload-photo-service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { Obra } from 'src/app/models/obra';
 import { DETALHAR_OBRA, OBRA_URL } from '../page.constants';
 import { NavegacaoTool } from 'src/app/shared/navegacao/navegacao.tool';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Endereco } from 'src/app/models/endereco';
-import { Proprietario } from 'src/app/models/proprietario';
-import { Responsavel } from 'src/app/models/responsavel';
-import { EStatusObra } from 'src/app/enum/EStatusObra';
+import { Construction } from 'src/app/models/construction';
+import { Responsible } from 'src/app/models/responsible';
 
 @Component({
   selector: 'app-obra',
@@ -21,13 +21,13 @@ export class ObraPage extends NavegacaoTool implements OnInit {
   public foto: Foto;
 
 
-  public obras: Obra[];
+  public constructions: Construction[];
   public status: string;
 
-  private obra: Obra;
-  private endereco: any;
-  private proprietario: any;
-  private responsavel: any;
+  private construction: Construction;
+  private address: any;
+  private owner: any;//proprietario
+  private responsible: any;
 
 
   constructor(
@@ -39,34 +39,31 @@ export class ObraPage extends NavegacaoTool implements OnInit {
   ) {
     super(route, router);
     this.foto = new Foto();
-    this.obra = new Obra();
+    this.construction = new Construction();
 
-    this.obras = [];
-    const _obra = new Obra('Predio A', new Foto('foto', null, null), EStatusObra.EmAndamento)
-    this.endereco = new Endereco('libano', 'eldorado', 2150);
-    this.proprietario = new Proprietario('marcos', '(94) 991285912', 'teste');
-    this.responsavel = new Responsavel('marcos', '11009.222.4444-33', 'crea@gmail.com', '(94) 991294433', [_obra]);
+    this.constructions = [];
+    const construction = new Construction('Predio A', 'foto', EStatusConstruction.EmAndamento)
+    this.address = new Address('libano', 'eldorado', 2150);
+    this.owner = new Owner('marcos', '(94) 991285912', 'teste');
+    this.responsible = new Responsible('marcos', '11009.222.4444-33', 'crea@gmail.com', '(94) 991294433');
 
   }
 
   ngOnInit() {
 
 
-    this.obra.nome = 'Construtec';
-    this.obra.Imagem = new Foto('https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg', null, null);
-    this.obra.statusObra = EStatusObra.Iniciado;
-    this.obra.endereco = this.endereco;
-    this.obra.proprietario = this.proprietario;
-    this.obra.Residente = this.proprietario;
-    this.obra.Fiscal1 = this.responsavel;
-    this.obra.Fiscal2 = this.responsavel;
-    this.obra.Relatorio = this.responsavel;
-    this.obra.dataInicio = new Date();
-    this.obra.dataFinal = new Date();
+    this.construction.Name = 'Construtec';
+    this.construction.Image = 'https://avrefrigeracao.com.br/wp-content/uploads/2018/09/Reforma-Constru%C3%A7%C3%A3o-Civil-1-2.jpg';
+    this.construction.sStatusConstruction = EStatusConstruction.Iniciado;
+    this.construction.owner = this.owner;
+    this.construction.responsibles = this.responsible;
+    this.construction.address = this.address;
+    this.construction.StartDate = new Date();
+    this.construction.FinalDate = new Date();
 
     for (let index = 0; index < 10; index++) {
-      this.obras.push(this.obra);
-      switch (this.obras[index].statusObra) {
+      this.constructions.push(this.construction);
+      switch (this.constructions[index].sStatusConstruction) {
         case 0:
           this.status = 'Iniciada'
           break;
@@ -84,7 +81,7 @@ export class ObraPage extends NavegacaoTool implements OnInit {
       }
 
     }
-    console.log('this.obra: ', this.obras);
+    console.log('this.obra: ', this.construction);
   }
 
   public getPhoto() {

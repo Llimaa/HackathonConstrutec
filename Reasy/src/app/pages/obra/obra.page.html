@@ -9,18 +9,16 @@
     </ion-fab-button>
   </ion-fab>
 
-  <img *ngIf="foto.data" [src]="foto.data" alt="Select Image" />
-
   <ion-list>
     <ion-grid class="grid">
       <ion-row class="ion-no-padding">
-        <ion-col class="col" size="4" (click)="detalharObra()" *ngFor="let obra of obras">
+        <ion-col class="col" size="4" (click)="detalharObra()" *ngFor="let construction of constructions">
           <ion-card class="ion-no-padding">
             <div class="container-img">
-              <img src="{{obra.Imagem.data}}" alt="">
+              <img src="{{construction.Image}}" alt="">
             </div>
             <ion-card-content>
-              <h2>{{obra.nome}}</h2>
+              <h2>{{construction.Name}}</h2>
               <h3>{{status}}</h3>
             </ion-card-content>
           </ion-card>

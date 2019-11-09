@@ -1,5 +1,5 @@
 
-export enum EStatusObra {
+export enum EStatusConstruction {
     Iniciado = 0,
     EmAndamento = 1,
     Finalizado = 2,
