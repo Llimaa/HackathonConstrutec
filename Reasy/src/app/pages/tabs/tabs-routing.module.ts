@@ -18,6 +18,17 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'rascunho',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../rascunho-relatorio/rascunho-relatorio.module').then(m => m.RascunhoRelatorioPageModule)
+          }
+        ]
+      },
+
+      {
         path: 'tab2',
         children: [
           {
