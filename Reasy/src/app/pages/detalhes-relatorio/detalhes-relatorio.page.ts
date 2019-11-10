@@ -3,7 +3,7 @@ import { NavegacaoTool } from 'src/app/shared/navegacao/navegacao.tool';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RELATORIO_URL } from '../page.constants';
 import { ModalController } from '@ionic/angular';
-import { ComentariosPage } from '../comentarios/comentarios.page';
+import { ComentarioComponent } from '../comentarios/comentarios.component';
 
 @Component({
   selector: 'app-detalhes-relatorio',
@@ -33,7 +33,7 @@ export class DetalhesRelatorioPage extends NavegacaoTool implements OnInit {
 
   public async openComentarios() {
     const modal = await this.modalController.create({
-      component: ComentariosPage,
+      component: ComentarioComponent,
       componentProps: {}
     });
 

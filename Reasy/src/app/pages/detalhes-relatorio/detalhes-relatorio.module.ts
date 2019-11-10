@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DetalhesRelatorioPage } from './detalhes-relatorio.page';
 import { NavbarTabsComponentModule } from 'src/app/components/navbar-tabs/navbar-tabs.module';
+import { ComentariosComponentModule } from '../comentarios/comentarios.component.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    NavbarTabsComponentModule
+    NavbarTabsComponentModule,
+    ComentariosComponentModule
 
   ],
   declarations: [DetalhesRelatorioPage]
