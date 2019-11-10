@@ -1,0 +1,90 @@
+component-perfil-foto {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .chat-message {
+    width: 80%;
+    min-height: 40px;
+    margin: 2% !important;
+  
+    .msgm-enviada {
+      position: relative;
+      background: #222428;
+      border-top-left-radius: 0.4em;
+      border-bottom-left-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+      padding: 5px 10px 10px;
+      left: 15%;
+      span.msg-date {
+        font-size: 10px;
+        color: white !important;
+      }
+    }
+    .msgm-enviada p {
+      text-align: justify;
+      color: white !important;
+      font-size: 14px;
+      margin: 2px;
+    }
+  
+    .msgm-recebida p {
+      text-align: justify;
+      color: black !important;
+      font-size: 14px;
+      margin: 2px;
+    }
+  
+    .msgm-recebida {
+      position: relative;
+      background: #dcdcdc;
+      border-top-right-radius: 0.4em;
+      border-bottom-left-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+      padding: 5px 10px 10px;
+      left: 5%;
+      span.msg-date {
+        font-size: 10px;
+        margin-left: 50%;
+      }
+    }
+  
+    .msgm-recebida:after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      border: 27px solid transparent;
+      border-right-color: #dcdcdc;
+      border-left: 0;
+      border-top: 0;
+      margin-left: -27px;
+    }
+    .msgm-enviada:after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      top: 0;
+      border: 27px solid transparent;
+      border-left-color: #222428;
+      border-right: 0;
+      border-top: 0;
+      margin-right: -27px;
+    }
+  }
+  
+  ion-footer {
+    background: white;
+    ion-icon {
+      padding: 10px;
+      font-size: 40px;
+      color: rgb(67, 83, 126);
+    }
+  }
+  

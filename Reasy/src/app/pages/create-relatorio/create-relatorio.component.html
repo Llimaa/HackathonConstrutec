@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>criar relatório</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="primary" size="small" (click)="getPhoto()">
+            <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-item>
+        <img src="{{foto.data}}" alt="">
+    </ion-item>
+
+    <br>
+    <ion-item>
+        <ion-label position="stacked">Nome:</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Descrição:</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-button expand="block" fill="outline" (click)="save()">Salvar
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

@@ -3,4 +3,30 @@
 
 <ion-content>
 
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="primary" size="small" (click)="addRelatorio()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-list *ngFor="let item of _comments" lines="none">
+        <!-- <ion-item *ngFor="let item of _comments" lines="none">
+            <div class="chat-message" text-left (press)="onPress(chat)">
+                <div class="msgm-recebida">
+                    <p text-wrap>{{item.Description}}</p>
+                </div>
+            </div>
+        </ion-item> -->
+
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>{{item.Title}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                {{item.Description}}
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
 </ion-content>

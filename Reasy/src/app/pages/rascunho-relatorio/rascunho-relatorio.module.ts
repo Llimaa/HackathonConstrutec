@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RascunhoRelatorioPage } from './rascunho-relatorio.page';
 import { NavbarTabsComponentModule } from 'src/app/components/navbar-tabs/navbar-tabs.module';
+import { CreateRelatorioComponentModule } from '../create-relatorio/create-relatorio.component.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    NavbarTabsComponentModule
+    NavbarTabsComponentModule,
+    CreateRelatorioComponentModule
   ],
   declarations: [RascunhoRelatorioPage]
 })
