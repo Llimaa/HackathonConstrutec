@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PR.API.Context;
@@ -40,12 +41,20 @@ namespace PR.API
             services.AddTransient<IParticipantRepository, ParticipantRepository>();
             services.AddTransient<IReportRepository, ReportRepository>();
             services.AddTransient<IResponsibleRepository, ResponsibleRepository>();
-            services.AddResponseCompression();
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<GzipCompressionProvider>();
+                options.EnableForHttps = true;
+            });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                          .AddJsonOptions(options =>
+                          {
+                              options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                          });
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
         }
@@ -63,21 +72,17 @@ namespace PR.API
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseResponseCompression();
+            app.UseMvc();
             app.UseSwagger(c =>
-                      {
-                          c.RouteTemplate = "swagger/{documentName}/swagger.json";
-                      });
+                                  {
+                                      c.RouteTemplate = "swagger/{documentName}/swagger.json";
+                                  });
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "PR API - v1");
                 c.RoutePrefix = "swagger";
             });
-            app.UseMvc(route =>
-            {
-                route.MapRoute("default", "{controller=Test}/{action=Index}/{id?}");
-            });
-            app.UseResponseCompression();
-
             // Pagina com documentação: '/swagger/index.html'
 
 

@@ -23,7 +23,7 @@ namespace PR.Infra.Repositories
             var sql = "SELECT * FROM Construction WHERE Id = @Id";
             using (var db = _DB.GetCon())
             {
-                var construction = await db.QueryAsync(sql, new { Id });
+                var construction = await db.QueryAsync<Construction>(sql, new { Id });
                 return construction.FirstOrDefault();
             }
         }

@@ -24,3 +24,17 @@ C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreap
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csproj.CopyComplete
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.dll
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.deps.json
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Domain.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Domain.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Shared.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csprojAssemblyReference.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csproj.CoreCompileInputs.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.AssemblyInfoInputs.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.AssemblyInfo.cs
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csproj.CopyComplete
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.pdb

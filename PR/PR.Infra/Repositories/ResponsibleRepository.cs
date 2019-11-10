@@ -24,7 +24,7 @@ namespace PR.Infra.Repositories
             var sql = "SELECT * FROM Responsible WHERE CREA = @crea";
             using (var db = _DB.GetCon())
             {
-                var responsible = await db.QueryAsync(sql, new { crea });
+                var responsible = await db.QueryAsync<Responsible>(sql, new { crea });
                 return responsible.FirstOrDefault();
             }
         }

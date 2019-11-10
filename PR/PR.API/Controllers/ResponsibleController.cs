@@ -27,14 +27,6 @@ namespace PR.API.Controllers
             return ListResponsible;
         }
 
-        // GET: api/Responsible/crea
-        [HttpGet("{crea}")]
-        public async Task<Responsible> Get(string crea)
-        {
-            var ListResponsible = await ResponsibleHandler.ListCREA(crea);
-            return ListResponsible;
-        }
-
         // POST: api/Responsible/InsertResponsibleCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertResponsibleCommandInput value)

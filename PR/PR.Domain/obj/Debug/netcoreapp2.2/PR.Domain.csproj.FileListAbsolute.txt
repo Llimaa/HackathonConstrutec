@@ -20,3 +20,15 @@ C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcorea
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CopyComplete
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.dll
 C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.deps.json
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Domain.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\bin\Debug\netcoreapp2.2\PR.Shared.pdb
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csprojAssemblyReference.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CoreCompileInputs.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfoInputs.cache
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.AssemblyInfo.cs
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.csproj.CopyComplete
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.dll
+C:\dev\new\HackathonConstrutec\PR\PR.Domain\obj\Debug\netcoreapp2.2\PR.Domain.pdb

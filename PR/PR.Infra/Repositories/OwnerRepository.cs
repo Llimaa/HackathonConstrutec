@@ -24,7 +24,7 @@ namespace PR.Infra.Repositories
             var sql = "SELECT * FROM WHERE Id = @Id";
             using (var db = _DB.GetCon())
             {
-                var owner = await db.QueryAsync(sql, new { Id });
+                var owner = await db.QueryAsync<Owner>(sql, new { Id });
                 return owner.FirstOrDefault();
             }
         }
