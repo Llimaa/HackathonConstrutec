@@ -12,17 +12,15 @@ namespace PR.Domain.Entities
         }
         public Responsible(string name, string crea, string email, string phone)
         {
+            new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
+                .IsNullOrEmpty(crea, "CREA", "O CREA é campo obrigatório")
+                .IsEmail(email, "Email", "Email invalido")
+                .IsNullOrEmpty(phone, "Phone", "A Telefone é campo obrigatório");
             Name = name;
             CREA = crea;
             Email = email;
             Phone = phone;
-
-            AddNotifications(new Contract()
-                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
-                .IsNullOrEmpty(crea, "CREA", "O CREA é campo obrigatório")
-                .IsEmail(email, "Email", "Email invalido")
-                .IsNullOrEmpty(phone, "Phone", "A Telefone é campo obrigatório")
-                );
         }
 
         public List<Construction> Constructions { get; set; }

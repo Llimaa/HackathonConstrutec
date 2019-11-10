@@ -17,6 +17,8 @@ namespace PR.Domain.Entities
 
         public Construction(string name, Address address, Owner owner, DateTime startDate, DateTime finalDate)
         {
+            new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório").Join(address);
             Name = name;
             EStatusConstruction = EStatusConstruction.Start;
             Responsibles = new List<Responsible>();
@@ -24,12 +26,7 @@ namespace PR.Domain.Entities
             Owner = owner;
             StartDate = startDate;
             FinalDate = finalDate;
-
-            AddNotifications(new Contract()
-                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório"),
-
-                address, owner
-                );
+            
         }
 
         public string Name { get; set; }
@@ -82,5 +79,9 @@ namespace PR.Domain.Entities
         {
             EStatusConstruction = eStatusConstruction;
         }
+        public Guid OwnerId { get; set; }
+        public Guid ResidentId { get; set; }
+        public Guid Fiscal1Id { get; set; }
+        public Guid Fiscal2Id { get; set; }
     }
 }

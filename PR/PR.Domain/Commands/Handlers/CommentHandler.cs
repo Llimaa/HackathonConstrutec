@@ -32,7 +32,7 @@ namespace PR.Domain.Commands.Handlers
             await Task.WhenAll(report, responsavel);
             var comment = new Comment(report.Result, responsavel.Result, command.Title, command.Description);
 
-            var result = await _BuildResult.BuildResult(comment.Notifications);
+            var result =  _BuildResult.BuildResult(comment.Notifications);
 
             if (comment.Invalid)
                 return new CommandResult(result);
@@ -46,10 +46,10 @@ namespace PR.Domain.Commands.Handlers
         {
             var comment = await _COREP.GetById(command.CommentId);
 
-            comment.Update(command.Title,command.Description);
+            comment.Update(command.Title, command.Description);
 
             if (comment.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(comment.Notifications));
 
             _COREP.Update(comment);
 
@@ -60,12 +60,18 @@ namespace PR.Domain.Commands.Handlers
         public async Task<Comment> GetById(Guid Id)
         {
             var comment = await _COREP.GetById(Id);
+            comment.Responsible = await _RREP.GetById(comment.ResponsibleId);
+            comment.Report = await _RELREP.GetById(comment.ReportId);
             return comment;
         }
         public async Task<IEnumerable<Comment>> ListCommentsByReportId(Guid reportId)
         {
             var comments = await _COREP.ListCommentsByReportId(reportId);
-
+            foreach (var comment in comments)
+            {
+                comment.Responsible = await _RREP.GetById(comment.ResponsibleId);
+                comment.Report = await _RELREP.GetById(comment.ReportId);
+            }
             return comments;
         }
     }

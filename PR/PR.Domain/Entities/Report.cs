@@ -14,6 +14,10 @@ namespace PR.Domain.Entities
 
         public Report(string title, string image, string description, Responsible responsible, Construction construction)
         {
+            new Contract()
+                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
+                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
+                .IsNotNull(responsible,"Responsavel","É necessario um Responsavel para Obra");
             Title = title;
             Image = image;
             Description = description;
@@ -21,12 +25,7 @@ namespace PR.Domain.Entities
             Construction = construction;
             DateReport = DateTime.Now;
 
-            AddNotifications(new Contract()
-                .IsNullOrEmpty(title, "Title", "O Título é campo obrigatório")
-                .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório"),
-
-                responsible, construction
-                );
+           
         }
 
         public string Title { get; set; }
@@ -54,5 +53,8 @@ namespace PR.Domain.Entities
                 .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
                 );
         }
+
+        public Guid ResponsibleId { get; set; }
+        public Guid ConstructionId { get; set; }
     }
 }

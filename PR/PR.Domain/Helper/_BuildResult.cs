@@ -6,23 +6,22 @@ namespace PR.Domain.Helper
 {
     public static class _BuildResult
     {
-        public static async Task<string[]> BuildResult(IReadOnlyCollection<Notification> Notifications)
+        public static string[] BuildResult(IReadOnlyCollection<Notification> Notifications)
         {
             string[] result = new string[0];
 
             result = new string[Notifications.Count];
 
-            int i;
+            int i = 0;
             foreach (var notification in Notifications)
             {
-                for (i = 0; i <= Notifications.Count;)
-                {
+                if (i < Notifications.Count)
                     result[i] = $"{notification.Property} {notification.Message}";
-                }
                 i++;
             }
-
             return result;
         }
+
     }
 }
+

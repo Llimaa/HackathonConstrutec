@@ -32,7 +32,7 @@ namespace PR.Domain.Commands.Handlers
             var report = new Report(command.Title, command.Image, command.Description, responsavel.Result, construction.Result);
 
             if (report.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications));
 
             _RLREP.Insert(report);
 
@@ -46,7 +46,7 @@ namespace PR.Domain.Commands.Handlers
             report.Update(command.Title, command.Image, command.Description);
 
             if (report.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications));
 
             _RLREP.Update(report);
             
@@ -56,17 +56,29 @@ namespace PR.Domain.Commands.Handlers
         public async Task<Report> GetById(Guid id)
         {
             var report = await _RLREP.GetById(id);
+            report.Responsible = await _RREP.GetById(report.ResponsibleId);
+            report.Construction = await _OREP.GetById(report.ConstructionId);
             return report;
         }
         public async Task<IEnumerable<Report>> ListByResponsibleId(Guid responsibleId)
         {
             var reports = await _RLREP.ListByResponsibleId(responsibleId);
+            foreach (var report in reports)
+            {
+                report.Responsible = await _RREP.GetById(report.ResponsibleId);
+                report.Construction = await _OREP.GetById(report.ConstructionId);
+            }
             return reports;
         }
 
         public async Task<IEnumerable<Report>> ListByConstructionId(Guid constructionId)
         {
             var reports = await _RLREP.ListByConstructionId(constructionId);
+            foreach (var report in reports)
+            {
+                report.Responsible = await _RREP.GetById(report.ResponsibleId);
+                report.Construction = await _OREP.GetById(report.ConstructionId);
+            }
             return reports;
         }
     }
