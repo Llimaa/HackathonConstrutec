@@ -1,14 +1,3 @@
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.deps.json
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.dll
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Domain.dll
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Shared.dll
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Domain.pdb
-C:\dev\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Shared.pdb
-C:\dev\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csprojAssemblyReference.cache
-C:\dev\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csproj.CoreCompileInputs.cache
-C:\dev\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.AssemblyInfoInputs.cache
-C:\dev\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.AssemblyInfo.cs
-C:\dev\HackathonConstrutec\PR\PR.Infra\obj\Debug\netcoreapp2.2\PR.Infra.csproj.CopyComplete
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.deps.json
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.dll
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Infra\bin\Debug\netcoreapp2.2\PR.Infra.pdb

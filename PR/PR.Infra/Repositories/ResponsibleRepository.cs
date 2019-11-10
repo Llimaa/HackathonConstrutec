@@ -1,8 +1,10 @@
-﻿using PR.Domain.Entities;
+﻿using Dapper;
+using PR.Domain.Entities;
 using PR.Domain.Repositories;
 using PR.Infra.Infra;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,42 +21,47 @@ namespace PR.Infra.Repositories
 
         public async Task<Responsible> GetByCREA(string crea)
         {
-            var sql = "";
+            var sql = "SELECT * FROM Responsible WHERE CREA = @crea";
             using (var db = _DB.GetCon())
             {
-
+                var responsible = await db.QueryAsync(sql, new { crea });
+                return responsible.FirstOrDefault();
             }
-            throw new NotImplementedException();
         }
 
         public async Task<Responsible> GetById(Guid Id)
         {
-            var sql = "";
+            var sql = "SELECT * FROM Responsible WHERE Id = @Id";
             using (var db = _DB.GetCon())
             {
-
+                var responsible = await db.QueryAsync(sql, new { Id });
+                return responsible.FirstOrDefault();
             }
-            throw new NotImplementedException();
         }
 
         public void Insert(Responsible responsavel)
         {
-            var sql = "";
+            var sql = "INSERT INTO Responsible" +
+                " (Id,Name,CREA,Email,Phone)" +
+                " VALUES" +
+                " (@Id,@Name,@CREA,@Email,@Phone)";
             using (var db = _DB.GetCon())
             {
-
+                db.Execute(sql,responsavel);
             }
-            throw new NotImplementedException();
         }
 
         public void Update(Responsible responsavel)
         {
-            var sql = "";
+            var sql = "UPDATE Responsible SET " +
+                "Name = @Name" +
+               ",Email = @Email" +
+               ",Phone = @Phone" +
+               " WHERE Id = @Id";
             using (var db = _DB.GetCon())
             {
-
+                db.Execute(sql, responsavel);
             }
-            throw new NotImplementedException();
         }
     }
 }
