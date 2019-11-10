@@ -111,6 +111,6 @@ export class ObraPage extends NavegacaoTool implements OnInit {
   async detalharObra() {
     let id = 1;
 
-    this.irPara([DETALHAR_OBRA, id.toString()], OBRA_URL);
+    this.irPara([DETALHAR_OBRA, id.toString()], this.construction, OBRA_URL);
   }
 }

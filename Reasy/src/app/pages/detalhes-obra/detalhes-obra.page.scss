@@ -1,0 +1,75 @@
+:host {
+    background-color: white;
+  
+    .container-img-evento {
+      background-color: #ddd;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 75vw;
+    }
+  
+    .container-conteudo {
+      padding: 16px;
+    }
+  
+    .container-conteudo h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #000000;
+      margin: 8px 0px 12px 0px;
+    }
+  
+    .container-conteudo p {
+      font-size: 15px !important;
+      font-weight: 500;
+      margin: 0px;
+    }
+  
+    hr {
+      border-bottom: 1px solid #999;
+      margin: 18px 0px;
+    }
+  
+    .container-conteudo a {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #666;
+      text-decoration: none;
+    }
+  
+    .container-conteudo ion-icon {
+      margin-right: 20px;
+    }
+  
+    .container-conteudo ion-button {
+      height: 50px;
+    }
+  
+    ion-spinner {
+      margin-right: 10px;
+    }
+  
+    ion-footer ion-buttons {
+      height: 60px;
+      border-top: 1px solid #999;
+    }
+  
+    ion-footer ion-button {
+      width: 33.33%;
+      height: 45px;
+      margin: 0px;
+      padding: 0px;
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #666;
+    }
+  
+    #btn-compartilhar {
+      border-left: 1px solid #999;
+      border-right: 1px solid #999;
+    }
+  }
+  

@@ -22,6 +22,12 @@ const routes: Routes = [
       {
         path: 'detalhes-obra/:id',
         loadChildren: '../detalhes-obra/detalhes-obra.module#DetalhesObraPageModule'
+      }, {
+        path: 'comentarios',
+        loadChildren: '../comentarios/comentarios.module#ComentariosPageModule'
+      }, {
+        path: 'detalhes-relatorio/:id',
+        loadChildren: '../detalhes-relatorio/detalhes-relatorio.module#DetalhesRelatorioPageModule'
       },
     ]
   }

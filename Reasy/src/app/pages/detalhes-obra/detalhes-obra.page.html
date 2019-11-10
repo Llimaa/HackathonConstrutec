@@ -1,6 +1,67 @@
-<component-navbar-tabs [title]="'Detalhes'" [backTo]="'path'">
-  </component-navbar-tabs>
-
 <ion-content>
+
+  <ion-fab vertical="top" horizontal="start">
+    <ion-fab-button size="small" color="light" (click)="voltar()">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="container-img-evento">
+    <img src="{{item.Image}}" alt="">
+  </div>
+
+  <!-- <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" size="small" (click)="showPhotoViewer()">
+      <ion-icon name="expand"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+  <div class="container-conteudo">
+    <h2 style="text-align: center !important">{{item.Name}}</h2>
+
+    <ion-item>
+      <ion-icon slot="start" name="stats"></ion-icon>
+      <ion-label>
+        status:
+        {{status}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="calendar"></ion-icon>
+      <ion-label>
+        Criada em:
+        {{item.StartDate | date:'dd/MM/yyyy'}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="calendar"></ion-icon>
+      <ion-label>
+        Termino previsto:
+        {{item.FinalDate | date:'dd/MM/yyyy'}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="pin"></ion-icon>
+      <ion-label>
+        {{item.address.District}},&nbsp;&nbsp; {{item.address.Street}},&nbsp; nº:&nbsp; {{item.address.Number}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label>
+        {{item.owner.Name}}
+      </ion-label>
+    </ion-item>
+
+
+    <!-- <ion-button color="danger" shape="block" fill="outline">
+      <ion-spinner name="circles" color="danger"></ion-spinner>
+      CANCELAR PRESENÇA
+    </ion-button> -->
+  </div>
+
+  <ion-button expand="block" fill="outline" (click)="verRelatorios()">Relatórios</ion-button>
 
 </ion-content>

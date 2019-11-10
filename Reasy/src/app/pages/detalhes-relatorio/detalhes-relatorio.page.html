@@ -1,0 +1,59 @@
+<ion-content>
+
+  <ion-fab vertical="top" horizontal="start">
+    <ion-fab-button size="small" color="light" (click)="voltar()">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div>
+    <img src="{{item.Image}}" alt="">
+  </div>
+
+  <div class="container-conteudo">
+    <h2 style="text-align: center !important">{{item.Title}}</h2>
+    <div>
+      <span>
+        <i style="font-size: 15px;">{{item.Description}}</i>
+      </span>
+    </div>
+
+    <p class="date">Elaborado em:
+      {{item.DateReport | date:'dd/MM/yyyy'}}</p>
+
+    <hr>
+
+    <h2 style="text-align: center !important">responsavel</h2>
+
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label> Nome: &nbsp;
+        {{item.Responsible.Name}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="bookmark"></ion-icon>
+      <ion-label> CREA: &nbsp;
+        {{item.Responsible.CREA}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="mail-open"></ion-icon>
+      <ion-label> E-mail:&nbsp;
+        {{item.Responsible.Email}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-label> Cel: &nbsp;
+        {{item.Responsible.Phone}}
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <ion-button expand="block" fill="outline" (click)="openComentarios()">Visualizar comentários</ion-button>
+
+</ion-content>

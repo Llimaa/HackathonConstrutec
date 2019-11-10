@@ -3,23 +3,23 @@
 
 <ion-content>
   <div *ngFor="let report of  reports">
-    <div class="container-item-evento">
+    <div class="container-item-evento" (click)="DetalharRelatorio()">
       <ion-row class="cartao">
         <div class="container-img-evento">
           <img src="{{report.Image}}" alt="">
         </div>
         <div class="container-conteudo">
           <div>
-            <p>{{report.DateReport | date:'dd/MM/yyyy'}}</p>
-            <h2>{{report.Title}}</h2>
+            <h2>
+              <ion-icon style="font-size: 6vw !important" name="ribbon"></ion-icon> {{report.Title}}
+            </h2>
+            <ion-icon style="font-size: 6vw !important" name="calendar"></ion-icon>
+            {{report.DateReport | date:'dd/MM/yyyy'}}
           </div>
-          <ion-row class="rodape-item-evento">
-            <ion-col size="9" class="ion-no-padding" (click)="irParaDetalhe()">
-              <small>
-                <ion-icon name="pin"></ion-icon> {{report.Description}}
-              </small>
-            </ion-col>
-          </ion-row>
+          <br>
+          <span>
+            <i style="font-size: 12px;">{{report.Description}}</i>
+          </span>
         </div>
       </ion-row>
     </div>
