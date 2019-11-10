@@ -26,7 +26,7 @@ namespace PR.Domain.Commands.Handlers
             var address = new Address(command.Street, command.District, command.Number);
             var proprietario = new Owner(command.Name, command.Phone, command.Email, address);
 
-            var result = await _BuildResult.BuildResult(proprietario.Notifications);
+            var result = _BuildResult.BuildResult(proprietario.Notifications);
             if (proprietario.Invalid)
                 return new CommandResult(result);
 
@@ -41,7 +41,7 @@ namespace PR.Domain.Commands.Handlers
             proprietario.Update(command.Name, command.Phone, command.Email);
 
             if (proprietario.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(proprietario.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(proprietario.Notifications));
 
             _PREP.Update(proprietario);
 

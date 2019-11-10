@@ -57,7 +57,7 @@ namespace PR.Domain.Commands.Handlers
 
             if (construction.Invalid)
             {
-                return new CommandResult(_BuildResult.BuildResult(construction.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(construction.Notifications));
             }
 
             foreach (var item in construction.Responsibles)
@@ -79,7 +79,7 @@ namespace PR.Domain.Commands.Handlers
             construction.Result.Update(command.Name, command.Image, command.FinalDate);
 
             if (construction.Result.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(construction.Result.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(construction.Result.Notifications));
 
             await AddResponsaveis(command.creas, construction.Result);
 

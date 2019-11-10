@@ -32,7 +32,7 @@ namespace PR.Domain.Commands.Handlers
             var report = new Report(command.Title, command.Image, command.Description, responsavel.Result, construction.Result);
 
             if (report.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications));
 
             _RLREP.Insert(report);
 
@@ -46,7 +46,7 @@ namespace PR.Domain.Commands.Handlers
             report.Update(command.Title, command.Image, command.Description);
 
             if (report.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(report.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(report.Notifications));
 
             _RLREP.Update(report);
             

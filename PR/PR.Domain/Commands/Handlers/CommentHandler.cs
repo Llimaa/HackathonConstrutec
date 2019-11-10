@@ -32,7 +32,7 @@ namespace PR.Domain.Commands.Handlers
             await Task.WhenAll(report, responsavel);
             var comment = new Comment(report.Result, responsavel.Result, command.Title, command.Description);
 
-            var result = await _BuildResult.BuildResult(comment.Notifications);
+            var result =  _BuildResult.BuildResult(comment.Notifications);
 
             if (comment.Invalid)
                 return new CommandResult(result);
@@ -49,7 +49,7 @@ namespace PR.Domain.Commands.Handlers
             comment.Update(command.Title, command.Description);
 
             if (comment.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(comment.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(comment.Notifications));
 
             _COREP.Update(comment);
 

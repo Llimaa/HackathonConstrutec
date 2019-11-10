@@ -8,20 +8,19 @@ namespace PR.Domain.Entities
     {
         public Owner(string name, string phone, string email, Address address)
         {
+            new Contract()
+                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
+                .IsNullOrEmpty(phone, "Phone", "O Telefone é campo obrigatório")
+                .IsEmail(email, "Email", "Email invalido").Join(address);
+
             Name = name;
             Phone = phone;
             Email = email;
             Address = address;
 
-            AddNotifications(new Contract()
-                .IsNullOrEmpty(name, "Name", "O Nome é campo obrigatório")
-                .IsNullOrEmpty(phone, "Phone", "O Telefone é campo obrigatório")
-                .IsEmail(email, "Email", "Email invalido"),
 
-                address
-                );
         }
-        public Owner() {}
+        public Owner() { }
 
         public string Name { get; set; }
         public string Phone { get; set; }

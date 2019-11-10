@@ -11,15 +11,15 @@ namespace PR.Domain.ValueObjects
         }
         public Address(string street, string district, string number)
         {
+            new Contract()
+                .IsNullOrEmpty(street, "Street", "A Rua é campo obrigatório")
+                .IsNullOrEmpty(district, "District", "O Bairro é campo obrigatório")
+                .IsNullOrEmpty(number, "Number", "O Numero é campo obrigatório");
             Street = street;
             District = district;
             Number = number;
 
-            AddNotifications(new Contract()
-                .IsNullOrEmpty(street, "Street", "A Rua é campo obrigatório")
-                .IsNullOrEmpty(district, "District", "O Bairro é campo obrigatório")
-                .IsNullOrEmpty(number, "Number", "O Numero é campo obrigatório")
-                );
+
         }
         // Street
         public string Street { get; set; }

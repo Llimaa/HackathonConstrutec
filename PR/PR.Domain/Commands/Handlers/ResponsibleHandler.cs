@@ -27,7 +27,7 @@ namespace PR.Domain.Commands.Handlers
             var responsavel = new Responsible(command.Name, command.CREA, command.Email, command.Phone);
 
             if (responsavel.Invalid)
-                return new CommandResult(_BuildResult.BuildResult(responsavel.Notifications).Result);
+                return new CommandResult(_BuildResult.BuildResult(responsavel.Notifications));
 
             if (!resul.Result.CREA.Contains(responsavel.CREA))
                 _RREP.Insert(responsavel);
