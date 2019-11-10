@@ -110,12 +110,24 @@ namespace PR.Domain.Commands.Handlers
         public async Task<Construction> GetById(Guid Id)
         {
             var construction = await _OREP.GetById(Id);
+            construction.Owner = await _PPREP.GetById(construction.OwnerId);
+            construction.Resident = await _RREP.GetById(construction.ResidentId);
+            construction.Fiscal1 = await _RREP.GetById(construction.Fiscal1Id);
+            construction.Fiscal2 = await _RREP.GetById(construction.Fiscal2Id);
+            construction.Responsibles.AddRange(await _PAREP.ListResponsibleByConstructionId(Id));
             return construction;
         }
         public async Task<IEnumerable<Construction>> ListByOwnerId(Guid proprietarioId)
         {
             var constructions = await _OREP.ListByOwnerId(proprietarioId);
-
+            foreach (var construction in constructions)
+            {
+                construction.Owner = await _PPREP.GetById(construction.OwnerId);
+                construction.Resident = await _RREP.GetById(construction.ResidentId);
+                construction.Fiscal1 = await _RREP.GetById(construction.Fiscal1Id);
+                construction.Fiscal2 = await _RREP.GetById(construction.Fiscal2Id);
+                construction.Responsibles.AddRange(await _PAREP.ListResponsibleByConstructionId(Id));
+            }
             return constructions;
         }
     }

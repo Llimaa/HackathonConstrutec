@@ -82,5 +82,9 @@ namespace PR.Domain.Entities
         {
             EStatusConstruction = eStatusConstruction;
         }
+        public Guid OwnerId { get; set; }
+        public Guid ResidentId { get; set; }
+        public Guid Fiscal1Id { get; set; }
+        public Guid Fiscal2Id { get; set; }
     }
 }

@@ -54,5 +54,8 @@ namespace PR.Domain.Entities
                 .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
                 );
         }
+
+        public Guid ResponsibleId { get; set; }
+        public Guid ConstructionId { get; set; }
     }
 }

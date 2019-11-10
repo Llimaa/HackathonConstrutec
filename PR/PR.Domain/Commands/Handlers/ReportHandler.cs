@@ -56,17 +56,29 @@ namespace PR.Domain.Commands.Handlers
         public async Task<Report> GetById(Guid id)
         {
             var report = await _RLREP.GetById(id);
+            report.Responsible = await _RREP.GetById(report.ResponsibleId);
+            report.Construction = await _OREP.GetById(report.ConstructionId);
             return report;
         }
         public async Task<IEnumerable<Report>> ListByResponsibleId(Guid responsibleId)
         {
             var reports = await _RLREP.ListByResponsibleId(responsibleId);
+            foreach (var report in reports)
+            {
+                report.Responsible = await _RREP.GetById(report.ResponsibleId);
+                report.Construction = await _OREP.GetById(report.ConstructionId);
+            }
             return reports;
         }
 
         public async Task<IEnumerable<Report>> ListByConstructionId(Guid constructionId)
         {
             var reports = await _RLREP.ListByConstructionId(constructionId);
+            foreach (var report in reports)
+            {
+                report.Responsible = await _RREP.GetById(report.ResponsibleId);
+                report.Construction = await _OREP.GetById(report.ConstructionId);
+            }
             return reports;
         }
     }

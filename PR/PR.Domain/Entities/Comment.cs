@@ -1,5 +1,6 @@
 ﻿using Flunt.Validations;
 using PR.Shared.Entities;
+using System;
 
 namespace PR.Domain.Entities
 {
@@ -39,5 +40,7 @@ namespace PR.Domain.Entities
                 .IsNullOrEmpty(description, "Description", "A Descrição é campo obrigatório")
                 );
         }
+        public Guid ReportId { get; set; }
+        public Guid ResponsibleId { get; set; }
     }
 }

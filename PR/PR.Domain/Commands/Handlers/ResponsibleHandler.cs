@@ -13,10 +13,14 @@ namespace PR.Domain.Commands.Handlers
                                     ICommandHandler<UpdateResponsibleCommandInput>
     {
         private readonly IResponsibleRepository _RREP;
-        public ResponsibleHandler(IResponsibleRepository RREP)
+        private readonly IParticipantRepository _PAREP;
+
+        public ResponsibleHandler(IResponsibleRepository RREP, IParticipantRepository PAREP)
         {
-            _RREP = RREP;          
+            _RREP = RREP;
+            _PAREP = PAREP;
         }
+
         public async Task<ICommandResult> Handler(InsertResponsibleCommandInput command)
         {
             var resul = _RREP.GetByCREA(command.CREA);
@@ -45,12 +49,14 @@ namespace PR.Domain.Commands.Handlers
         public async Task<Responsible> ListId(Guid Id)
         {
             var responsible = await _RREP.GetById(Id);
+            responsible.Constructions.AddRange(await _PAREP.ListConstructionByResponsibleId(Id));
             return responsible;
         }
 
         public async Task<Responsible> ListCREA(string crea)
         {
             var responsible = await _RREP.GetByCREA(crea);
+            responsible.Constructions.AddRange(await _PAREP.ListConstructionByResponsibleId(responsible.Id));
             return responsible;
         }
     }
