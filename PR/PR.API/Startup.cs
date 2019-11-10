@@ -24,20 +24,15 @@ namespace PR.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddResponseCompression();
-            services.AddSwaggerGen(x =>
-            {
-                x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
-            });
             // DataBase Context
-            services.AddScoped<IDB, MSSQLDB>();
+            services.AddSingleton<IDB, MSSQLDB>();
             services.AddTransient<IDBConfiguration, MSSQLDBConfiguration>();
             // Handlers
-            services.AddTransient<ConstructionHandler, ConstructionHandler>();
-            services.AddTransient<OwnerHandler, OwnerHandler>();
-            services.AddTransient<ReportHandler, ReportHandler>();
-            services.AddTransient<ResponsibleHandler, ResponsibleHandler>();
+            services.AddTransient<ConstructionHandler>();
+            services.AddTransient<OwnerHandler>();
+            services.AddTransient<ReportHandler>();
+            services.AddTransient<ResponsibleHandler>();
+            services.AddTransient<CommentHandler>();
             // Repositories
             services.AddTransient<ICommentRepository, CommentRepository>();
             services.AddTransient<IConstructionRepository, ConstructionRepository>();
@@ -45,6 +40,13 @@ namespace PR.API
             services.AddTransient<IParticipantRepository, ParticipantRepository>();
             services.AddTransient<IReportRepository, ReportRepository>();
             services.AddTransient<IResponsibleRepository, ResponsibleRepository>();
+            services.AddResponseCompression();
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
+            });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
 
         }
 
@@ -60,23 +62,24 @@ namespace PR.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseMvc(route =>
-            {
-                route.MapRoute("default", "{controller=Test}/{action=Index}/{id?}");
-            });
-            app.UseResponseCompression();
-            app.UseSwagger(c => {
-                c.RouteTemplate = "swagger/{documentName}/swagger.json";
-            });
+            app.UseHttpsRedirection();
+            app.UseSwagger(c =>
+                      {
+                          c.RouteTemplate = "swagger/{documentName}/swagger.json";
+                      });
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "PR API - v1");
                 c.RoutePrefix = "swagger";
             });
+            app.UseMvc(route =>
+            {
+                route.MapRoute("default", "{controller=Test}/{action=Index}/{id?}");
+            });
+            app.UseResponseCompression();
+
             // Pagina com documentação: '/swagger/index.html'
 
-            app.UseHttpsRedirection();
 
         }
     }
