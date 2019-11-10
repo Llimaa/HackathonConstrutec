@@ -1,0 +1,8 @@
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\bin\Release\netcoreapp2.2\PR.Shared.deps.json
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\bin\Release\netcoreapp2.2\PR.Shared.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\bin\Release\netcoreapp2.2\PR.Shared.pdb
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Release\netcoreapp2.2\PR.Shared.csprojAssemblyReference.cache
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Release\netcoreapp2.2\PR.Shared.AssemblyInfoInputs.cache
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Release\netcoreapp2.2\PR.Shared.AssemblyInfo.cs
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Release\netcoreapp2.2\PR.Shared.dll
+C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Release\netcoreapp2.2\PR.Shared.pdb
