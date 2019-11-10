@@ -63,7 +63,7 @@ namespace PR.API
 
             app.UseMvc(route =>
             {
-                route.MapRoute("default", "{controller=swagger}/{action=Index}/{id?}");
+                route.MapRoute("default", "{controller=Test}/{action=Index}/{id?}");
             });
             app.UseResponseCompression();
             app.UseSwagger(c => {

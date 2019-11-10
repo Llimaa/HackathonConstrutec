@@ -14,11 +14,8 @@ namespace PR.API
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseSetting("detailedErrors", "true")
-                //.UseKestrel(options => { options.Limits.MaxRequestBodySize = 524288; })
+                // .UseKestrel(options => { options.Limits.MaxRequestBodySize = 524288; })
                 .UseIISIntegration();
-        // 
-        // 
-        // 
 
     }
 }
