@@ -5,3 +5,11 @@ C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\D
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfo.cs
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.dll
 C:\Users\Abmael Araujo Silva\source\repos\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.pdb
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.deps.json
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.dll
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\bin\Debug\netcoreapp2.2\PR.Shared.pdb
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.csprojAssemblyReference.cache
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfoInputs.cache
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.AssemblyInfo.cs
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.dll
+C:\Users\limaa\Documents\DEV\HackathonConstrutec\PR\PR.Shared\obj\Debug\netcoreapp2.2\PR.Shared.pdb
