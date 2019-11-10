@@ -77,14 +77,14 @@ namespace PR.API
             app.UseHttpsRedirection();
             app.UseResponseCompression();
             app.UseMvc();
-            app.UseSwagger(c =>
-                                  {
-                                      c.RouteTemplate = "swagger/{documentName}/swagger.json";
-                                  });
+      
+            app.UseSwagger();
+
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "PR API - v1");
                 c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "PR API v1");
+                c.InjectStylesheet("../css/swagger.min.css");
             });
             // Pagina com documentação: '/swagger/index.html'
 
