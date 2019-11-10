@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ReportByResponsibleController : ControllerBase
@@ -17,6 +20,11 @@ namespace PR.API.Controllers
         {
             _handler = handler;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="responsibleId"></param>
+        /// <returns></returns>
         // GET: api/ReportByResponsible/responsibleId
         [HttpGet("{responsibleId}")]
         public async Task<IEnumerable<Report>> Get(Guid responsibleId)

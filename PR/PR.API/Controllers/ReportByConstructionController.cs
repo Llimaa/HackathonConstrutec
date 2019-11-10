@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ReportByConstructionController : ControllerBase
@@ -18,6 +21,11 @@ namespace PR.API.Controllers
         {
             ReportHandler = reportHandler;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="constructionId"></param>
+        /// <returns></returns>
         // GET: api/ReportByConstruction/constructionId
         [HttpGet("{constructionId}")]
         public async Task<IEnumerable<Report>> Get(Guid constructionId)

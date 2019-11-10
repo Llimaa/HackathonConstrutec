@@ -10,6 +10,7 @@ using PR.Domain.Repositories;
 using PR.Infra.Infra;
 using PR.Infra.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
+using System.IO;
 
 namespace PR.API
 {
@@ -54,6 +55,8 @@ namespace PR.API
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new Info { Title = "PR", Version = "v1" });
+                var filePath = Path.Combine("Xml", "PRAPI.xml");
+                x.IncludeXmlComments(filePath);
             });
 
 

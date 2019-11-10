@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ResponsibleController : ControllerBase
@@ -18,7 +21,11 @@ namespace PR.API.Controllers
             ResponsibleHandler = constructionHandler;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         // GET: api/Responsible/Id
         [HttpGet("{Id}")]
         public async Task<Responsible> Get(Guid Id)
@@ -26,7 +33,11 @@ namespace PR.API.Controllers
             var ListResponsible = await ResponsibleHandler.ListId(Id);
             return ListResponsible;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         // POST: api/Responsible/InsertResponsibleCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertResponsibleCommandInput value)
@@ -34,7 +45,11 @@ namespace PR.API.Controllers
             var result  = await ResponsibleHandler.Handler(value);
             return result;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         // PUT: api/Responsible/UpdateResponsibleCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateResponsibleCommandInput value)

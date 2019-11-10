@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PR.API</name>
+    </assembly>
+    <members>
+        <member name="T:PR.API.Controllers.CommentController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.CommentController.Post(PR.Domain.Commands.Inputs.InsertCommentCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.CommentController.Put(PR.Domain.Commands.Inputs.UpdateCommentCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ConstructionByOwnerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ConstructionByOwnerController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ownerId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ConstructionController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ConstructionController.Post(PR.Domain.Commands.Inputs.InsertConstructionCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.ConstructionController.Put(PR.Domain.Commands.Inputs.UpdateConstructionCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.OwnerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.OwnerController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.OwnerController.Post(PR.Domain.Commands.Inputs.InsertOwnerCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.OwnerController.Put(PR.Domain.Commands.Inputs.UpdateOwnerCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ReportByConstructionController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ReportByConstructionController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="constructionId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ReportByResponsibleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ReportByResponsibleController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="responsibleId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ReportController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ReportController.Post(PR.Domain.Commands.Inputs.InsertReportCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.ReportController.Put(PR.Domain.Commands.Inputs.UpdateReportCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ResponsibleByCreaController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ResponsibleByCreaController.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="crea"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.ResponsibleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.ResponsibleController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.ResponsibleController.Post(PR.Domain.Commands.Inputs.InsertResponsibleCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PR.API.Controllers.ResponsibleController.Put(PR.Domain.Commands.Inputs.UpdateResponsibleCommandInput)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PR.API.Controllers.TestController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PR.API.Controllers.TestController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

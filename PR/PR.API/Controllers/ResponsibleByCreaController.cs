@@ -9,6 +9,9 @@ using PR.Domain.Entities;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ResponsibleByCreaController : ControllerBase
@@ -20,7 +23,11 @@ namespace PR.API.Controllers
             ResponsibleHandler = responsibleHandler;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="crea"></param>
+        /// <returns></returns>
         // GET: api/Responsible/crea
         [HttpGet("{crea}")]
         public async Task<Responsible> Get(string crea)

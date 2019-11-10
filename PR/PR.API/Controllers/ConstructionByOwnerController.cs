@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ConstructionByOwnerController : ControllerBase
@@ -17,6 +20,11 @@ namespace PR.API.Controllers
         {
             ConstructionHandler = constructionHandler;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ownerId"></param>
+        /// <returns></returns>
         // GET: api/ConstructionByOwner/ownerId
         [HttpGet("{ownerId}")]
         public async Task<IEnumerable<Construction>> Get(Guid ownerId)

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PR.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ReportController : ControllerBase
@@ -16,7 +19,11 @@ namespace PR.API.Controllers
             ReportHandler = constructionHandler;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         // POST: api/Report/InsertReportCommandInput
         [HttpPost]
         public async Task<ICommandResult> Post([FromBody] InsertReportCommandInput value)
@@ -24,7 +31,11 @@ namespace PR.API.Controllers
             var result  = await ReportHandler.Handler(value);
             return result;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         // PUT: api/Report/UpdateReportCommandInput
         [HttpPut]
         public async Task<ICommandResult> Put([FromBody] UpdateReportCommandInput value)
