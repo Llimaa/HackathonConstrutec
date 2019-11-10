@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Foto } from 'src/app/models/foto';
+import { EventsService } from 'src/app/services/events.-providers.service';
 
 @Component({
     selector: 'component-create-relatorio',
@@ -39,6 +40,10 @@ export class CreateRelatorioComponent implements OnInit {
         }, (err) => {
             // Handle error
         });
+    }
+
+    public save() {
+        EventsService.get('save').emit(this.foto);
     }
 
 }
