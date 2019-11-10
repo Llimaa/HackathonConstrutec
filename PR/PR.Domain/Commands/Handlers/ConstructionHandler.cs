@@ -126,7 +126,7 @@ namespace PR.Domain.Commands.Handlers
                 construction.Resident = await _RREP.GetById(construction.ResidentId);
                 construction.Fiscal1 = await _RREP.GetById(construction.Fiscal1Id);
                 construction.Fiscal2 = await _RREP.GetById(construction.Fiscal2Id);
-                construction.Responsibles.AddRange(await _PAREP.ListResponsibleByConstructionId(Id));
+                construction.Responsibles.AddRange(await _PAREP.ListResponsibleByConstructionId(construction.Id));
             }
             return constructions;
         }

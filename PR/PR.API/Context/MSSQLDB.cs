@@ -21,7 +21,10 @@ namespace PR.API.Context
 
         public IDbConnection GetCon()
         {
-            con = new SqlConnection(strcon);
+            if (con == null || con.State != ConnectionState.Open)
+                con = new SqlConnection(strcon);
+
+            con.Open();
             return con;
         }
     }
