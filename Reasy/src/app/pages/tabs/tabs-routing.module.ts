@@ -29,28 +29,18 @@ const routes: Routes = [
       },
 
       {
-        path: 'tab2',
+        path: 'relatorios',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../relatorios/relatorios.module').then(m => m.RelatoriosPageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/obra',
         pathMatch: 'full'
       }
     ]

@@ -708,25 +708,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abmael Araujo Silva\\.nuget\\packages\\": {},
+    "C:\\Users\\limaa\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\limaa\\Documents\\DEV\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
       "projectName": "PR.Shared",
-      "projectPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
-      "packagesPath": "C:\\Users\\Abmael Araujo Silva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abmael Araujo Silva\\source\\repos\\HackathonConstrutec\\PR\\PR.Shared\\obj\\",
+      "projectPath": "C:\\Users\\limaa\\Documents\\DEV\\HackathonConstrutec\\PR\\PR.Shared\\PR.Shared.csproj",
+      "packagesPath": "C:\\Users\\limaa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\limaa\\Documents\\DEV\\HackathonConstrutec\\PR\\PR.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Abmael Araujo Silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\limaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

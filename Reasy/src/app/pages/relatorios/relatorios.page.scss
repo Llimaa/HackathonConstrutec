@@ -1,0 +1,89 @@
+
+.container-item-evento, .container-item-anuncio{
+    background-color: #f2f2f2;
+    padding: 16px;
+    padding-bottom: 0px;
+}
+
+.cartao{
+    width: calc(100vw - 32px);
+}
+
+img {
+    max-width: 100% !important;
+    border: 0;
+    height: 100% !important;
+}
+
+.container-img-evento{
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    // width: 100px;
+    // height: 140px;
+    width: 27.75vw;
+    height: 38.9vw;
+}
+
+.container-conteudo{
+    background-color: #fff;
+    width: calc(72.25vw - 32px);
+    height: 38.9vw;
+    //padding: 10px;
+    padding: 3vw;
+    overflow: hidden;
+}
+
+.container-conteudo p{
+    height: 6.5vw;
+    margin: 0px;
+    font-size: 3.8vw;
+    color: #c2000b;
+}
+
+.container-conteudo h2{
+    height: 16vw;
+    margin: 0px;
+    font-size: 4.3vw;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rodape-item-evento{
+    bottom: 0;
+    height: 13vw;
+    margin: 0px;
+}
+
+.container-conteudo small{
+    margin: 1.5vw 0px;
+    display: block;
+    font-size: 3.4vw;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container-conteudo ion-icon{
+    font-size: 4vw;
+    margin-bottom: -1.3vw;
+}
+
+.container-component-popover{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+component-popover{
+    margin-right: -2.5vw;
+    margin-top: 2.5vw;
+}
+
+  .modal-eventos {
+    width: 10px !important;
+    height: 10px !important;
+  }

@@ -21,6 +21,7 @@ namespace PR.Domain.Entities
                 address
                 );
         }
+        public Owner() {}
 
         public string Name { get; set; }
         public string Phone { get; set; }

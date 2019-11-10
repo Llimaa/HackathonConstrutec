@@ -1,0 +1,28 @@
+<component-navbar-tabs [title]="'Relatórios'" [backTo]="'0'">
+</component-navbar-tabs>
+
+<ion-content>
+  <div *ngFor="let report of  reports">
+    <div class="container-item-evento">
+      <ion-row class="cartao">
+        <div class="container-img-evento">
+          <img src="{{report.Image}}" alt="">
+        </div>
+        <div class="container-conteudo">
+          <div>
+            <p>{{report.DateReport | date:'dd/MM/yyyy'}}</p>
+            <h2>{{report.Title}}</h2>
+          </div>
+          <ion-row class="rodape-item-evento">
+            <ion-col size="9" class="ion-no-padding" (click)="irParaDetalhe()">
+              <small>
+                <ion-icon name="pin"></ion-icon> {{report.Description}}
+              </small>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-row>
+    </div>
+  </div>
+
+</ion-content>
